@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "topic": "HTML",
+    "question": "What does the <!DOCTYPE html> declaration do?",
+    "options": [
+      "Links an external stylesheet to the page",
+      "Tells the browser to use the latest HTML5 rendering mode",
+      "Defines the character encoding of the document",
+      "Creates the root element of the page"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 2,
+    "topic": "HTML",
+    "question": "Which of the following is a semantic HTML5 element?",
+    "options": [
+      "<div>",
+      "<span>",
+      "<article>",
+      "<b>"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 3,
+    "topic": "HTML",
+    "question": "What is the purpose of the 'alt' attribute on an <img> tag?",
+    "options": [
+      "Sets the image width",
+      "Provides a text description for screen readers and when the image fails to load",
+      "Specifies the image file format",
+      "Adds a tooltip that appears on hover"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 4,
+    "topic": "HTML",
+    "question": "Which element is a block-level element?",
+    "options": [
+      "<span>",
+      "<a>",
+      "<strong>",
+      "<p>"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 5,
+    "topic": "HTML",
+    "question": "What attribute should you add to an external link that opens in a new tab for security?",
+    "options": [
+      "rel=\"stylesheet\"",
+      "rel=\"noopener noreferrer\"",
+      "target=\"_self\"",
+      "href=\"external\""
+    ],
+    "answer": 1
+  },
+  {
+    "id": 6,
+    "topic": "CSS",
+    "question": "What does 'box-sizing: border-box' do?",
+    "options": [
+      "Removes the border from an element",
+      "Makes the element a flex container",
+      "Includes padding and border within the declared width and height",
+      "Sets the element to display as a block"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 7,
+    "topic": "CSS",
+    "question": "Which CSS selector has the HIGHEST specificity?",
+    "options": [
+      "p",
+      ".card",
+      "#header",
+      "div p"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 8,
+    "topic": "CSS",
+    "question": "What CSS property creates a flexible one-dimensional layout?",
+    "options": [
+      "display: grid",
+      "display: block",
+      "display: flex",
+      "display: inline"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 9,
+    "topic": "CSS",
+    "question": "Which CSS unit scales relative to the root element's font size?",
+    "options": [
+      "px",
+      "em",
+      "rem",
+      "vh"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 10,
+    "topic": "CSS",
+    "question": "Which position value removes an element from the document flow and positions it relative to its nearest positioned ancestor?",
+    "options": [
+      "static",
+      "relative",
+      "absolute",
+      "sticky"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 11,
+    "topic": "JavaScript",
+    "question": "Why is 'var' avoided in modern JavaScript?",
+    "options": [
+      "It cannot store strings",
+      "It is function-scoped, which can cause variables to leak out of blocks",
+      "It was removed in ES6",
+      "It is slower than const"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 12,
+    "topic": "JavaScript",
+    "question": "What does document.querySelector('.card') return?",
+    "options": [
+      "All elements with class 'card'",
+      "The first element matching the selector '.card'",
+      "An error because querySelector only accepts IDs",
+      "A string representation of the element"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 13,
+    "topic": "JavaScript",
+    "question": "What is the correct way to compare values without type coercion in JavaScript?",
+    "options": [
+      "==",
+      "===",
+      "!=",
+      "="
+    ],
+    "answer": 1
+  },
+  {
+    "id": 14,
+    "topic": "JavaScript",
+    "question": "Which array method returns a NEW array containing only items that pass a test?",
+    "options": [
+      ".map()",
+      ".forEach()",
+      ".filter()",
+      ".reduce()"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 15,
+    "topic": "JavaScript",
+    "question": "What does 'async/await' provide in JavaScript?",
+    "options": [
+      "A way to write synchronous code that blocks the UI",
+      "Syntactic sugar over Promises that makes asynchronous code read like synchronous code",
+      "A method to speed up JavaScript execution",
+      "A way to run code in a separate thread"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 16,
+    "topic": "HTML",
+    "question": "Which HTML entity must be used to display a literal '<' character in page text?",
+    "options": [
+      "&less;",
+      "&lt;",
+      "&#lt;",
+      "<"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 17,
+    "topic": "HTML",
+    "question": "What is the correct ordering of HTML heading levels from most to least important?",
+    "options": [
+      "<h6> to <h1>",
+      "<h1> to <h6>",
+      "<title> to <h1>",
+      "<header> to <h1>"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 18,
+    "topic": "HTML",
+    "question": "Which input type creates a checkbox in a form?",
+    "options": [
+      "<input type=\"check\">",
+      "<input type=\"checkbox\">",
+      "<input type=\"tick\">",
+      "<checkbox>"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 19,
+    "topic": "HTML",
+    "question": "What is the purpose of the <label> element?",
+    "options": [
+      "It styles form controls",
+      "It associates descriptive text with a form control for accessibility",
+      "It validates form input",
+      "It groups multiple form fields"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 20,
+    "topic": "HTML",
+    "question": "Which list type produces a numbered list?",
+    "options": [
+      "<ul>",
+      "<dl>",
+      "<ol>",
+      "<list type=\"number\">"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 21,
+    "topic": "CSS",
+    "question": "Which CSS property controls the space INSIDE an element's border?",
+    "options": [
+      "margin",
+      "padding",
+      "border-spacing",
+      "gap"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 22,
+    "topic": "CSS",
+    "question": "Which colour notation lets you specify transparency directly?",
+    "options": [
+      "#1a6b52",
+      "rgb(26, 107, 82)",
+      "rgba(26, 107, 82, 0.5)",
+      "named colours"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 23,
+    "topic": "CSS",
+    "question": "In Flexbox, which property aligns items along the MAIN axis?",
+    "options": [
+      "align-items",
+      "justify-content",
+      "flex-direction",
+      "align-content"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 24,
+    "topic": "CSS",
+    "question": "Which CSS unit is relative to the font-size of the root element?",
+    "options": [
+      "em",
+      "rem",
+      "vw",
+      "px"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 25,
+    "topic": "CSS",
+    "question": "How do you define a CSS custom property (variable)?",
+    "options": [
+      "$primary: #1a6b52;",
+      "@primary: #1a6b52;",
+      "--primary: #1a6b52;",
+      "var(primary) = #1a6b52;"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 26,
+    "topic": "JavaScript",
+    "question": "Which method converts a JavaScript object to a JSON string?",
+    "options": [
+      "JSON.parse()",
+      "JSON.stringify()",
+      "object.toJSON()",
+      "toString()"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 27,
+    "topic": "JavaScript",
+    "question": "What does the 'finally' block in a try/catch/finally statement do?",
+    "options": [
+      "It runs only if no error occurred",
+      "It runs only if an error occurred",
+      "It runs regardless of whether an error occurred",
+      "It catches any errors that escape the catch block"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 28,
+    "topic": "JavaScript",
+    "question": "Which jQuery method makes an AJAX request?",
+    "options": [
+      "$.fetch()",
+      "$.request()",
+      "$.ajax()",
+      "$.http()"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 29,
+    "topic": "JavaScript",
+    "question": "What does the 'await' keyword do?",
+    "options": [
+      "It pauses async function execution until a Promise resolves",
+      "It catches errors in synchronous code",
+      "It declares a constant variable",
+      "It creates a delay timer"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 30,
+    "topic": "JavaScript",
+    "question": "Which string method returns the index of the first occurrence of a substring?",
+    "options": [
+      "search()",
+      "find()",
+      "indexOf()",
+      "locate()"
+    ],
+    "answer": 2
+  }
+]

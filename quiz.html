@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dip's Web Academy - Quiz</title>
+
+  <!-- Google Fonts (CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Source+Code+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Material Symbols (CDN) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- jQuery (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/quiz.css">
+
+  <!-- Quiz-specific styles (inline to keep single-file scope) -->
+</head>
+<body>
+
+  <!-- Skip-to-content link (accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ====================================================
+       TOP APP BAR
+       ==================================================== -->
+  <header class="top-app-bar" role="banner">
+    <a href="index.html" class="top-app-bar__brand" aria-label="Home">
+      <span class="material-symbols-outlined">public</span>
+      Dip's Web Academy
+    </a>
+    <nav class="top-app-bar__nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">
+        <span class="material-symbols-outlined">school</span> Tutorial
+      </a>
+      <a href="quiz.html" class="nav-link active">
+        <span class="material-symbols-outlined">quiz</span> Quiz
+      </a>
+      <a href="reflection.html" class="nav-link">
+        <span class="material-symbols-outlined">psychology</span> AI Reflection
+      </a>
+      <a href="cv.html" class="nav-link">
+        <span class="material-symbols-outlined">badge</span> My CV
+      </a>
+    </nav>
+    <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="material-symbols-outlined" id="themeToggleIcon">dark_mode</span>
+    </button>
+    <button class="menu-toggle" aria-label="Open navigation menu" id="menuToggleBtn">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <div class="mobile-drawer__header"><span class="material-symbols-outlined">public</span> Dip's Web Academy</div>
+    <a href="index.html" class="nav-link"><span class="material-symbols-outlined">school</span> Tutorial</a>
+    <a href="quiz.html" class="nav-link active"><span class="material-symbols-outlined">quiz</span> Quiz</a>
+    <a href="reflection.html" class="nav-link"><span class="material-symbols-outlined">psychology</span> AI Reflection</a>
+    <a href="cv.html" class="nav-link"><span class="material-symbols-outlined">badge</span> My CV</a>
+  </nav>
+
+  <!-- ====================================================
+       MAIN CONTENT
+       ==================================================== -->
+  <main class="main-content" id="main-content">
+    <div class="page-container">
+
+      <!-- Hero -->
+      <section class="tutorial-hero fade-in" style="margin-bottom:32px;">
+        <h1 class="headline-large">Test Your Knowledge</h1>
+        <p class="body-large">
+          Answer the questions below based on the HTML, CSS, and JavaScript
+          tutorial. You need <strong>70% or higher</strong> to pass. Questions
+          are randomised each time you load the page.
+        </p>
+      </section>
+
+      <!-- User Profile (persists between sessions) -->
+      <section class="card card--elevated fade-in" id="profileCard" style="margin-bottom:24px;">
+        <div class="card__header">
+          <div class="card__icon"><span class="material-symbols-outlined">account_circle</span></div>
+          <div>
+            <h2 class="title-large" id="profileGreeting">Welcome!</h2>
+            <p class="body-small" style="color:var(--md-sys-color-on-surface-variant);">Set your name to track your progress.</p>
+          </div>
+        </div>
+
+        <!-- Name input form (shown when no name is set) -->
+        <div id="nameInputArea">
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;">
+            <input type="text" id="nameInput" placeholder="Enter your name…" maxlength="40"
+                   style="flex:1; min-width:200px; padding:10px 14px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface); font-family:inherit; font-size:0.9375rem;">
+            <button class="btn btn--filled" id="saveNameBtn">
+              <span class="material-symbols-outlined">save</span> Save
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile stats (shown when name is set) -->
+        <div id="profileStats" style="display:none;">
+          <div class="profile-stats-grid">
+            <div class="profile-stat">
+              <span class="profile-stat__num" id="statAttempts">0</span>
+              <span class="profile-stat__label">Attempts</span>
+            </div>
+            <div class="profile-stat">
+              <span class="profile-stat__num" id="statBest"> - </span>
+              <span class="profile-stat__label">Best Score</span>
+            </div>
+            <div class="profile-stat">
+              <span class="profile-stat__num" id="statAvg"> - </span>
+              <span class="profile-stat__label">Average</span>
+            </div>
+            <div class="profile-stat">
+              <span class="profile-stat__num" id="statTrophies">0</span>
+              <span class="profile-stat__label">Trophies</span>
+            </div>
+          </div>
+
+          <!-- Trophy collection -->
+          <div class="trophy-collection">
+            <div class="trophy-collection__title">Trophy Collection</div>
+            <div class="trophy-collection__grid">
+              <div class="trophy-mini trophy-mini--gold">
+                <span class="material-symbols-outlined">emoji_events</span>
+                <div><strong id="trophyGold">0</strong> Gold</div>
+              </div>
+              <div class="trophy-mini trophy-mini--silver">
+                <span class="material-symbols-outlined">emoji_events</span>
+                <div><strong id="trophySilver">0</strong> Silver</div>
+              </div>
+              <div class="trophy-mini trophy-mini--bronze">
+                <span class="material-symbols-outlined">emoji_events</span>
+                <div><strong id="trophyBronze">0</strong> Bronze</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn--text" id="changeNameBtn" style="margin-top:8px;">
+            <span class="material-symbols-outlined">edit</span> Change name
+          </button>
+        </div>
+      </section>
+
+      <!-- Loading State: Skeleton placeholders (shown while AJAX fetches) -->
+      <div id="quizLoading">
+        <!-- Skeleton progress bar -->
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
+          <div class="skeleton" style="flex:1; height:8px; border-radius:4px;"></div>
+          <div class="skeleton" style="width:90px; height:14px;"></div>
+        </div>
+        <!-- Skeleton question cards -->
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-line--short" style="margin-bottom:12px;"></div>
+          <div class="skeleton skeleton-line--title"></div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+            <div class="skeleton skeleton-line" style="height:44px; width:100%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:100%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:100%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:95%;"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-line--short" style="margin-bottom:12px;"></div>
+          <div class="skeleton skeleton-line--title"></div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+            <div class="skeleton skeleton-line" style="height:44px; width:100%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:100%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:98%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:100%;"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-line--short" style="margin-bottom:12px;"></div>
+          <div class="skeleton skeleton-line--title"></div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+            <div class="skeleton skeleton-line" style="height:44px; width:100%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:96%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:100%;"></div>
+            <div class="skeleton skeleton-line" style="height:44px; width:92%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error State (shown if AJAX fails) -->
+      <div id="quizError" class="quiz-error" style="display:none;">
+        <span class="material-symbols-outlined">error</span>
+        <h2 class="headline-small" id="quizErrorTitle">Failed to Load Questions</h2>
+        <p class="body-medium" id="quizErrorMsg">Please check that the data file exists and try again.</p>
+        <button class="btn btn--filled" id="quizRetryBtn" style="margin-top:16px;">
+          <span class="material-symbols-outlined">refresh</span> Retry
+        </button>
+      </div>
+
+      <!-- Quiz Container (questions rendered here dynamically) -->
+      <div id="quizContainer" style="display:none;">
+
+        <!-- Demo Mode Panel (for instructor demonstration) -->
+        <div id="demoPanelToggle" style="text-align:right; margin-bottom:8px;">
+          <button class="btn btn--text" id="demoToggleBtn" style="font-size:0.75rem; opacity:0.5;">
+            <span class="material-symbols-outlined icon-sm">bug_report</span>
+            Demo Mode
+          </button>
+        </div>
+        <div id="demoPanel" style="display:none; margin-bottom:24px; padding:20px; border-radius:var(--md-sys-shape-corner-lg); border:2px dashed var(--md-sys-color-outline-variant); background:var(--md-sys-color-surface-container);">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <span class="material-symbols-outlined" style="font-size:20px; color:var(--md-sys-color-primary);">science</span>
+            <span class="title-medium" style="color:var(--md-sys-color-primary);">Instructor Demo Mode</span>
+          </div>
+          <p class="body-small" style="color:var(--md-sys-color-on-surface-variant); margin-bottom:16px;">
+            Simulate quiz results instantly without answering all questions. This triggers the full scoring flow, result display, reward API call (on pass), answer review, and localStorage history - identical to a real submission.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div style="flex:1; min-width:120px;">
+              <label class="label-large" style="display:block; margin-bottom:4px;">Simulated Score</label>
+              <select id="demoScoreSelect" style="width:100%; padding:8px 12px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); font-family:var(--md-sys-typescale-code-font); font-size:0.875rem; background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface);">
+                <option value="100">100% - Perfect Score (15/15)</option>
+                <option value="87">87% - High Pass (13/15)</option>
+                <option value="73" selected>73% - Just Passing (11/15)</option>
+                <option value="60">60% - Fail (9/15)</option>
+                <option value="33">33% - Low Fail (5/15)</option>
+                <option value="0">0% - Zero (0/15)</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn btn--filled" id="demoSimulateBtn">
+              <span class="material-symbols-outlined">play_arrow</span> Simulate Result
+            </button>
+            <p class="body-small" style="color:var(--md-sys-color-on-surface-variant); align-self:center; margin:0;">
+              This will skip to the results screen immediately.
+            </p>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="quiz-progress fade-in">
+          <div class="quiz-progress__bar">
+            <div class="quiz-progress__fill" id="progressFill"></div>
+          </div>
+          <span class="quiz-progress__text" id="progressText">0 / 0 answered</span>
+          <span class="quiz-timer" id="quizTimer">
+            <span class="material-symbols-outlined">timer</span>
+            <span id="quizTimerDisplay">00:00</span>
+          </span>
+        </div>
+
+        <!-- Questions inserted here by JS -->
+        <div id="questionsWrapper"></div>
+
+        <!-- Validation message area -->
+        <div id="quizValidationMsg" style="display:none; margin-bottom:16px; padding:14px 20px; border-radius:var(--md-sys-shape-corner-sm); background:var(--md-sys-color-error-container); color:var(--md-sys-color-on-error-container); font-weight:600; font-size:0.875rem;">
+          <span class="material-symbols-outlined" style="font-size:18px; vertical-align:middle;">warning</span>
+          Please answer all questions before submitting. Unanswered questions are highlighted below.
+        </div>
+
+        <!-- Submit Button -->
+        <div style="text-align:center; margin-top:24px; margin-bottom:32px;">
+          <button class="btn btn--filled" id="submitQuizBtn" style="padding:14px 40px; font-size:1rem;">
+            <span class="material-symbols-outlined">check_circle</span>
+            Submit Quiz
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Section (hidden until submission) -->
+      <div id="resultsSection" style="display:none;">
+
+        <!-- Score Card -->
+        <div id="resultCard" class="result-card fade-in"></div>
+
+        <!-- Achievement Badge (shown on all completions) -->
+        <div id="rewardCard" class="reward-card fade-in" style="display:none;">
+          <div id="rewardContent"></div>
+        </div>
+
+        <!-- Review answers -->
+        <div class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">checklist</span></div>
+            <div><h2 class="title-large">Review Your Answers</h2></div>
+          </div>
+          <div id="reviewWrapper"></div>
+        </div>
+
+        <!-- Actions -->
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:24px; margin-bottom:32px;">
+          <button class="btn btn--filled" id="retakeBtn">
+            <span class="material-symbols-outlined">refresh</span> Retake Quiz
+          </button>
+          <a href="index.html" class="btn btn--outlined">
+            <span class="material-symbols-outlined">school</span> Back to Tutorial
+          </a>
+        </div>
+      </div>
+
+      <!-- Attempt History (persisted in localStorage) -->
+      <section class="card card--elevated fade-in" id="historySection" style="margin-top:32px;">
+        <div class="card__header">
+          <div class="card__icon"><span class="material-symbols-outlined">history</span></div>
+          <div><h2 class="title-large">Attempt History</h2></div>
+        </div>
+        <p class="body-medium" style="color:var(--md-sys-color-on-surface-variant); margin-bottom:8px;">
+          Your previous quiz attempts are saved locally in your browser.
+        </p>
+        <div id="historyContent">
+          <p class="body-medium" style="color:var(--md-sys-color-outline); font-style:italic;">No attempts yet.</p>
+        </div>
+        <div style="margin-top:16px; display:flex; gap:8px;">
+          <button class="btn btn--text" id="clearHistoryBtn" style="display:none;">
+            <span class="material-symbols-outlined">delete</span> Clear History
+          </button>
+        </div>
+      </section>
+
+    </div><!-- /.page-container -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Dip's Web Academy &copy; 2026</p>
+    <p style="font-size:0.6875rem; margin-top:6px; opacity:0.7;">Tested on Chrome, Firefox, Edge &amp; Safari · Validated with W3C HTML &amp; CSS validators</p>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+  </button>
+
+  <!-- Snackbar -->
+  <div class="snackbar" id="snackbar"></div>
+
+  <script src="js/shared.js"></script>
+  <!-- Quiz Script -->
+  <script src="js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,3125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dip's Web Academy - Interactive Tutorial</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Source+Code+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- highlight.js for syntax highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ====================================================
+       TOP APP BAR
+       ==================================================== -->
+  <header class="top-app-bar" role="banner">
+    <a href="index.html" class="top-app-bar__brand" aria-label="Home">
+      <span class="material-symbols-outlined">public</span>
+      Dip's Web Academy
+    </a>
+    <nav class="top-app-bar__nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link active">
+        <span class="material-symbols-outlined">school</span> Tutorial
+      </a>
+      <a href="quiz.html" class="nav-link">
+        <span class="material-symbols-outlined">quiz</span> Quiz
+      </a>
+      <a href="reflection.html" class="nav-link">
+        <span class="material-symbols-outlined">psychology</span> AI Reflection
+      </a>
+      <a href="cv.html" class="nav-link">
+        <span class="material-symbols-outlined">badge</span> My CV
+      </a>
+    </nav>
+    <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="material-symbols-outlined" id="themeToggleIcon">dark_mode</span>
+    </button>
+    <button class="menu-toggle" aria-label="Open navigation menu" id="menuToggleBtn">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <div class="mobile-drawer__header"><span class="material-symbols-outlined">public</span> Dip's Web Academy</div>
+    <a href="index.html" class="nav-link active"><span class="material-symbols-outlined">school</span> Tutorial</a>
+    <a href="quiz.html" class="nav-link"><span class="material-symbols-outlined">quiz</span> Quiz</a>
+    <a href="reflection.html" class="nav-link"><span class="material-symbols-outlined">psychology</span> AI Reflection</a>
+    <a href="cv.html" class="nav-link"><span class="material-symbols-outlined">badge</span> My CV</a>
+  </nav>
+
+  <!-- ====================================================
+       MAIN CONTENT
+       ==================================================== -->
+  <main class="main-content" id="main-content" style="margin-top:0;">
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section class="hero">
+      <div class="hero__content">
+        <div class="hero__badge"><span class="material-symbols-outlined icon-sm">school</span> Interactive Learning</div>
+        <h1 class="hero__title">Learn to Build<br><span class="hero__accent" id="typeTarget"></span><span class="hero__cursor">|</span></h1>
+        <p class="hero__sub">An interactive tutorial covering the three pillars of web development - HTML structure, CSS styling, and JavaScript interactivity - with <strong>14 live demos</strong>, cheatsheets, and a scored quiz.</p>
+        <div class="hero__actions">
+          <a href="#explore" class="hero__btn hero__btn--primary">
+            <span class="material-symbols-outlined">school</span> Start Learning
+          </a>
+          <a href="quiz.html" class="hero__btn hero__btn--outline">
+            <span class="material-symbols-outlined">quiz</span> Take the Quiz
+          </a>
+        </div>
+      </div>
+      <div class="hero__scroll-hint"><span class="material-symbols-outlined">expand_more</span></div>
+    </section>
+
+    <!-- ==========================================
+         STATS BAR
+         ========================================== -->
+    <section class="stats-bar">
+      <div class="stat"><span class="stat__num">14</span><span class="stat__label">Live Demos</span></div>
+      <div class="stat"><span class="stat__num">3</span><span class="stat__label">Core Topics</span></div>
+      <div class="stat"><span class="stat__num">15</span><span class="stat__label">Quiz Questions</span></div>
+      <div class="stat"><span class="stat__num">3</span><span class="stat__label">Cheatsheets</span></div>
+    </section>
+
+    <!-- ==========================================
+         TOPIC OVERVIEW CARDS
+         ========================================== -->
+    <section class="page-container landing-section" id="explore" style="scroll-margin-top:80px;">
+      <h2 class="landing-heading">Explore the Tutorial</h2>
+      <p class="landing-intro">Three comprehensive sections - each packed with explanations, annotated code, and hands-on demos you can experiment with directly in your browser.</p>
+
+      <div class="topic-grid">
+        <a href="#tutorial-start" class="topic-card topic-card--html" data-tab="section-html">
+          <div class="topic-card__glow"></div>
+          <span class="material-symbols-outlined topic-card__icon">html</span>
+          <h3 class="topic-card__title">HTML</h3>
+          <p class="topic-card__desc">Structure, semantics, headings, lists, forms, tables, attributes, entities, and accessibility.</p>
+          <div class="topic-card__footer"><span>10 topics</span><span>6 demos</span></div>
+        </a>
+        <a href="#tutorial-start" class="topic-card topic-card--css" data-tab="section-css">
+          <div class="topic-card__glow"></div>
+          <span class="material-symbols-outlined topic-card__icon">css</span>
+          <h3 class="topic-card__title">CSS</h3>
+          <p class="topic-card__desc">Colours, typography, backgrounds, selectors, box model, Flexbox, Grid, positioning, and animations.</p>
+          <div class="topic-card__footer"><span>11 topics</span><span>5 demos</span></div>
+        </a>
+        <a href="#tutorial-start" class="topic-card topic-card--js" data-tab="section-js">
+          <div class="topic-card__glow"></div>
+          <span class="material-symbols-outlined topic-card__icon">javascript</span>
+          <h3 class="topic-card__title">JavaScript</h3>
+          <p class="topic-card__desc">Variables, control flow, strings, objects, DOM, jQuery, error handling, JSON, and async/await.</p>
+          <div class="topic-card__footer"><span>12 topics</span><span>3 demos</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TUTORIAL
+         ========================================== -->
+    <section class="page-container" id="tutorial-start" style="padding-top:32px; scroll-margin-top:80px;">
+
+      <!-- Section Tabs -->
+      <div class="section-tabs fade-in" role="tablist">
+        <button class="section-tab active" data-section="section-html" role="tab" aria-selected="true">
+          <span class="material-symbols-outlined">html</span> HTML
+        </button>
+        <button class="section-tab" data-section="section-css" role="tab" aria-selected="false">
+          <span class="material-symbols-outlined">css</span> CSS
+        </button>
+        <button class="section-tab" data-section="section-js" role="tab" aria-selected="false">
+          <span class="material-symbols-outlined">javascript</span> JavaScript
+        </button>
+      </div>
+
+      <!-- Tutorial sections (one per tab) -->
+      <section class="tutorial-section visible" id="section-html" role="tabpanel">
+        <!-- Learning Objectives -->
+        <article class="card card--filled fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">flag</span></div>
+            <div>
+              <h2 class="title-large">Learning Objectives</h2>
+            </div>
+          </div>
+          <p class="body-large">By the end of this section you will be able to:</p>
+          <ul class="concept-list">
+            <li>Explain what HTML is and why it is the foundation of every web page.</li>
+            <li>Write a valid HTML5 document from scratch with proper meta tags.</li>
+            <li>Distinguish between block-level and inline elements and know when to use each.</li>
+            <li>Use attributes correctly  -  including global, boolean, and element-specific attributes.</li>
+            <li>Use semantic elements to improve accessibility, SEO, and code readability.</li>
+            <li>Build a multi-section page with forms, tables, links, images, and multimedia.</li>
+          </ul>
+        </article>
+
+        <!-- Card 1 – What is HTML? -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">description</span></div>
+            <div>
+              <h2 class="title-large">What is HTML?</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            HTML (HyperText Markup Language) is the standard language for creating
+            and structuring content on the web. Think of it as the <em>skeleton</em>
+            of a web page  -  it defines <strong>what</strong> content exists (headings,
+            paragraphs, images, links) while CSS and JavaScript control how that
+            content looks and behaves.
+          </p>
+          <p class="body-large">
+            <strong>Why does this matter?</strong> Without well-structured HTML,
+            search engines cannot index your content correctly, screen readers
+            cannot navigate it, and browsers may render it unpredictably.
+            Writing clean, semantic HTML is the single most important best practice
+            in front-end development  -  it makes your site accessible to
+            <em>everyone</em>, including users who rely on assistive technologies.
+          </p>
+          <ul class="concept-list">
+            <li>HTML uses <strong>tags</strong> (e.g., <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>) to wrap content and give it meaning.</li>
+            <li>Tags are paired  -  an <strong>opening tag</strong> (<code>&lt;p&gt;</code>) and a <strong>closing tag</strong> (<code>&lt;/p&gt;</code>)  -  with content in between.</li>
+            <li>Some tags are <strong>self-closing</strong> (e.g., <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>) because they have no child content.</li>
+            <li>The browser reads HTML <strong>top-to-bottom</strong> and builds a tree structure called the <strong>DOM</strong> (Document Object Model).</li>
+          </ul>
+
+          <!-- Demo: Tag Anatomy Explorer -->
+          
+        </article>
+
+        <!-- Card – Headings & Paragraphs -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">title</span></div>
+            <div>
+              <h2 class="title-large">Headings &amp; Paragraphs</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Headings (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) and
+            paragraphs (<code>&lt;p&gt;</code>) are the most fundamental HTML
+            elements. Headings define a <strong>hierarchy of importance</strong>:
+            <code>&lt;h1&gt;</code> is the main page title (use only one per page),
+            <code>&lt;h2&gt;</code> marks major sections, <code>&lt;h3&gt;</code>
+            sub-sections, and so on. Search engines use this hierarchy to
+            understand your content structure, and screen readers let users
+            navigate by heading level  -  so getting the hierarchy right matters
+            for both SEO and accessibility.
+          </p>
+          <p class="body-large">
+            Paragraphs are block-level elements that automatically add spacing
+            above and below. The browser collapses multiple spaces and line
+            breaks inside a <code>&lt;p&gt;</code> into a single space  -  if you
+            need to preserve formatting, use <code>&lt;pre&gt;</code> (preformatted text)
+            instead. For a line break without starting a new paragraph, use
+            the self-closing <code>&lt;br&gt;</code> tag. For a thematic break
+            (horizontal rule), use <code>&lt;hr&gt;</code>.
+          </p>
+<pre><code>&lt;!-- Heading hierarchy  -  use in order, never skip levels --&gt;
+&lt;h1&gt;Main Page Title&lt;/h1&gt;        &lt;!-- Only ONE h1 per page --&gt;
+&lt;h2&gt;Section Heading&lt;/h2&gt;
+&lt;h3&gt;Sub-section Heading&lt;/h3&gt;
+&lt;h4&gt;Detail Heading&lt;/h4&gt;
+
+&lt;!-- Paragraphs add automatic spacing --&gt;
+&lt;p&gt;This is a paragraph. The browser adds margin
+   above and below automatically.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.     Extra spaces
+   and line breaks     are collapsed into one.&lt;/p&gt;
+
+&lt;!-- Preformatted text preserves whitespace exactly --&gt;
+&lt;pre&gt;
+  This   text   preserves
+  all    spaces  and
+  line breaks exactly as written.
+&lt;/pre&gt;
+
+&lt;!-- Line break and horizontal rule --&gt;
+&lt;p&gt;Line one.&lt;br&gt;Line two (same paragraph).&lt;/p&gt;
+&lt;hr&gt; &lt;!-- Thematic break / horizontal rule --&gt;</code></pre>
+
+          <!-- Demo: Heading Hierarchy Builder -->
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Heading Hierarchy Preview
+            </div>
+            <p class="body-small demo-desc">
+              Select a heading level and type your text. Click <strong>Add</strong> to build a heading hierarchy. Notice how each level gets progressively smaller  -  this visual hierarchy matches the semantic importance.
+            </p>
+            <div class="flex-wrap-row mb-md">
+              <div class="flex-control flex-control--sm">
+                <label class="label-large">Level</label>
+                <select id="headingLevelSelect" style="width:100%; padding:8px 12px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); font-family:var(--md-sys-typescale-code-font); font-size:0.875rem; background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface);">
+                  <option value="1">h1</option>
+                  <option value="2" selected>h2</option>
+                  <option value="3">h3</option>
+                  <option value="4">h4</option>
+                  <option value="5">h5</option>
+                  <option value="6">h6</option>
+                </select>
+              </div>
+              <div class="flex-control flex-control--lg">
+                <label class="label-large">Text</label>
+                <input type="text" id="headingTextInput" value="My Section Title" placeholder="Heading text" class="demo-input">
+              </div>
+              <button class="btn btn--filled" id="addHeadingBtn" class="self-end">
+                <span class="material-symbols-outlined">add</span> Add
+              </button>
+              <button class="btn btn--text" id="clearHeadingsBtn" class="self-end">
+                <span class="material-symbols-outlined">delete</span> Clear
+              </button>
+            </div>
+            <div class="demo-area__preview" id="headingDemoPreview" style="min-height:60px;">
+              <span style="color:var(--md-sys-color-outline); font-style:italic;">Add headings above to build a hierarchy…</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card – Text Formatting & Comments -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">format_bold</span></div>
+            <div>
+              <h2 class="title-large">Text Formatting &amp; Comments</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            HTML provides elements for giving text <strong>semantic meaning</strong>
+            beyond just visual appearance. <code>&lt;strong&gt;</code> marks text as
+            <strong>important</strong> (browsers render it bold, but screen readers
+            also emphasise it). <code>&lt;em&gt;</code> marks text as
+            <em>emphasised</em> (rendered italic, but with vocal stress in screen
+            readers). These are different from <code>&lt;b&gt;</code> (bold) and
+            <code>&lt;i&gt;</code> (italic), which are purely visual with no
+            semantic meaning.
+          </p>
+          <p class="body-large">
+            <strong>HTML comments</strong> (<code>&lt;!-- ... --&gt;</code>) are
+            invisible to users but visible in the source code. They are essential
+            for documenting your code, temporarily disabling elements during
+            debugging, and leaving notes for other developers (or your future self).
+          </p>
+<pre><code>&lt;!-- ===== SEMANTIC formatting (preferred) ===== --&gt;
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; Submit your assignment by Friday.&lt;/p&gt;
+&lt;p&gt;Read the &lt;em&gt;entire&lt;/em&gt; brief before starting.&lt;/p&gt;
+
+&lt;!-- ===== Additional formatting elements ===== --&gt;
+&lt;p&gt;&lt;mark&gt;Highlighted text&lt;/mark&gt; draws attention.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Deleted text&lt;/del&gt; and &lt;ins&gt;inserted text&lt;/ins&gt;.&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O is water. E = mc&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;console.log()&lt;/code&gt; is an inline code snippet.&lt;/p&gt;
+
+&lt;!-- ===== VISUAL-ONLY formatting (use sparingly) ===== --&gt;
+&lt;p&gt;&lt;b&gt;Bold (no semantic meaning)&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Italic (no semantic meaning)&lt;/i&gt;&lt;/p&gt;
+
+&lt;!-- This is an HTML comment  -  invisible to users --&gt;
+&lt;!-- TODO: Add the contact form here --&gt;
+&lt;!-- &lt;p&gt;This paragraph is commented out / disabled.&lt;/p&gt; --&gt;</code></pre>
+
+          <!-- Demo: Formatting Preview -->
+          
+        
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Text Formatting Preview
+            </div>
+            <p class="body-small demo-desc">Type text and click a formatting tag to see it rendered and view the generated HTML code.</p>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+              <input type="text" id="formatTextInput" value="Sample text" placeholder="Type text…" style="flex:1; min-width:160px; padding:8px 12px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface); font-family:inherit;">
+            </div>
+            <div class="demo-btn-row" style="margin-bottom:12px;">
+              <button class="btn btn--outlined" data-fmt="strong">&lt;strong&gt;</button>
+              <button class="btn btn--outlined" data-fmt="em">&lt;em&gt;</button>
+              <button class="btn btn--outlined" data-fmt="mark">&lt;mark&gt;</button>
+              <button class="btn btn--outlined" data-fmt="small">&lt;small&gt;</button>
+              <button class="btn btn--outlined" data-fmt="del">&lt;del&gt;</button>
+              <button class="btn btn--outlined" data-fmt="ins">&lt;ins&gt;</button>
+              <button class="btn btn--outlined" data-fmt="sub">&lt;sub&gt;</button>
+              <button class="btn btn--outlined" data-fmt="sup">&lt;sup&gt;</button>
+            </div>
+            <div id="formatDemoPreview" class="demo-area__preview" style="min-height:40px; padding:12px; border:1px dashed var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); margin-bottom:8px;"></div>
+            <pre style="margin-top:8px;"><code id="formatDemoCode" style="display:block; white-space:pre;"></code></pre>
+          </div>
+
+        </article>
+
+        <!-- Card – Lists -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">format_list_bulleted</span></div>
+            <div>
+              <h2 class="title-large">Lists  -  Ordered, Unordered &amp; Description</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            HTML provides three types of lists. <strong>Unordered lists</strong>
+            (<code>&lt;ul&gt;</code>) display bullet points  -  use them when
+            the order doesn't matter. <strong>Ordered lists</strong>
+            (<code>&lt;ol&gt;</code>) display numbered items  -  use them for
+            step-by-step instructions, rankings, or sequences. <strong>Description
+            lists</strong> (<code>&lt;dl&gt;</code>) pair terms with their
+            definitions  -  use them for glossaries, FAQs, or metadata. Lists
+            can also be <strong>nested</strong> (a list inside another list) to
+            create multi-level hierarchies.
+          </p>
+<pre><code>&lt;!-- Unordered list (bullet points) --&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTML  -  structure&lt;/li&gt;
+  &lt;li&gt;CSS  -  style&lt;/li&gt;
+  &lt;li&gt;JavaScript  -  interactivity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered list (numbered) --&gt;
+&lt;ol&gt;
+  &lt;li&gt;Plan your layout&lt;/li&gt;
+  &lt;li&gt;Write the HTML structure&lt;/li&gt;
+  &lt;li&gt;Add CSS styling&lt;/li&gt;
+  &lt;li&gt;Add JavaScript interactivity&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Nested list --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Front-end
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+      &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Back-end
+    &lt;ul&gt;
+      &lt;li&gt;Node.js&lt;/li&gt;
+      &lt;li&gt;Python&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Description list (term + definition pairs) --&gt;
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language  -  structures web content.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets  -  controls visual presentation.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+          <!-- Demo: List Builder -->
+          
+        
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: List Type Comparison
+            </div>
+            <p class="body-small demo-desc">Click a list type to see it rendered and view the HTML code.</p>
+            <div class="demo-btn-row" style="margin-bottom:12px;">
+              <button class="btn btn--filled list-type-btn" data-list="ul">&lt;ul&gt; Unordered</button>
+              <button class="btn btn--outlined list-type-btn" data-list="ol">&lt;ol&gt; Ordered</button>
+              <button class="btn btn--outlined list-type-btn" data-list="dl">&lt;dl&gt; Definition</button>
+              <button class="btn btn--outlined list-type-btn" data-list="nested">Nested</button>
+            </div>
+            <div id="listDemoPreview" class="demo-area__preview" style="padding:12px; border:1px dashed var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); margin-bottom:8px;"></div>
+            <pre style="margin-top:8px;"><code id="listDemoCode" style="display:block; white-space:pre;"></code></pre>
+          </div>
+
+        </article>
+
+        <!-- Card – HTML Entities -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">code_blocks</span></div>
+            <div>
+              <h2 class="title-large">HTML Entities &amp; Special Characters</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Some characters have special meaning in HTML  -  for example,
+            <code>&lt;</code> starts a tag, <code>&gt;</code> ends one, and
+            <code>&amp;</code> begins an entity reference. To display these
+            characters as <em>visible text</em> rather than HTML code, you must
+            use <strong>character entities</strong>. Entities start with
+            <code>&amp;</code> and end with <code>;</code>. Without them, the
+            browser will try to interpret the characters as HTML, which either
+            breaks your page or creates a W3C validation error.
+          </p>
+<pre><code>&lt;!-- Common HTML entities --&gt;
+&amp;lt;     →  &lt;    (less than)
+&amp;gt;     →  &gt;    (greater than)
+&amp;amp;    →  &amp;    (ampersand)
+&amp;quot;   →  "    (double quote)
+&amp;apos;   →  '    (single quote / apostrophe)
+&amp;nbsp;   →       (non-breaking space)
+&amp;copy;   →  ©    (copyright)
+&amp;trade;  →  ™    (trademark)
+&amp;mdash;  →   -     (em dash)
+
+&lt;!-- Why entities matter: displaying code in HTML --&gt;
+&lt;p&gt;To write a tag, type &amp;lt;p&amp;gt; in your HTML.&lt;/p&gt;
+&lt;!-- Without entities, &lt;p&gt; would create a new paragraph! --&gt;
+
+&lt;!-- Non-breaking space prevents word wrapping --&gt;
+&lt;p&gt;10&amp;nbsp;kg means the number and unit stay together.&lt;/p&gt;</code></pre>
+
+          <!-- Demo: Entity Encoder -->
+          
+        </article>
+
+        <!-- Card 2 – Document Structure -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">account_tree</span></div>
+            <div>
+              <h2 class="title-large">Document Structure &amp; Meta Tags</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Every valid HTML5 document starts with a <code>&lt;!DOCTYPE html&gt;</code>
+            declaration, which tells the browser to use the latest rendering mode
+            instead of falling back to legacy "quirks mode". Inside the
+            <code>&lt;head&gt;</code>, meta tags provide critical information:
+            <code>charset</code> sets the character encoding (always use UTF-8),
+            and the <code>viewport</code> meta tag enables responsive design on
+            mobile devices. Omitting these tags is a common beginner mistake that
+            leads to broken layouts on phones and garbled special characters.
+          </p>
+<pre><code>&lt;!-- The DOCTYPE is required  -  without it, browsers fall into
+     "quirks mode" and rendering becomes unpredictable. --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;!-- UTF-8 supports every human language and emoji --&gt;
+  &lt;meta charset="UTF-8"&gt;
+
+  &lt;!-- This meta tag makes the page responsive on mobile.
+       Without it, phones render the page at desktop width
+       and force the user to pinch-zoom. --&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+  &lt;!-- The title appears in browser tabs and search-engine results --&gt;
+  &lt;title&gt;My First Page&lt;/title&gt;
+
+  &lt;!-- External stylesheet link (keeps HTML and CSS separated) --&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;p&gt;This is my first web page.&lt;/p&gt;
+
+  &lt;!-- Scripts load at the bottom so the HTML renders first --&gt;
+  &lt;script src="js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <!-- Demo: Document Skeleton Preview -->
+          
+        </article>
+
+        <!-- Card 3 – Semantic HTML -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">accessibility_new</span></div>
+            <div>
+              <h2 class="title-large">Semantic HTML &amp; Why It Matters</h2>
+              <span class="chip chip--html">Best Practice</span>
+            </div>
+          </div>
+          <p class="body-large">
+            HTML5 introduced <strong>semantic elements</strong>  -  tags whose names
+            describe the <em>role</em> of their content, not just its appearance.
+            Using <code>&lt;nav&gt;</code> instead of <code>&lt;div class="nav"&gt;</code>
+            tells the browser, screen readers, and search engines that the section
+            is a navigation block. This matters because:
+          </p>
+          <ul class="concept-list">
+            <li><strong>Accessibility:</strong> Screen readers can jump between <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;aside&gt;</code> landmarks, letting visually-impaired users navigate efficiently.</li>
+            <li><strong>SEO:</strong> Search engines rank pages higher when they can identify headings, articles, and navigation clearly.</li>
+            <li><strong>Maintainability:</strong> When another developer reads <code>&lt;article&gt;</code>, they instantly know the section is a self-contained piece of content  -  no guessing required.</li>
+          </ul>
+<pre><code>&lt;!-- BAD: Non-semantic "div soup"  -  hard to read, bad for a11y --&gt;
+&lt;div class="header"&gt;
+  &lt;div class="nav"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main"&gt;
+  &lt;div class="article"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- GOOD: Semantic elements  -  self-documenting and accessible --&gt;
+&lt;header&gt;
+  &lt;nav aria-label="Main navigation"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Understanding Semantic HTML&lt;/h2&gt;
+    &lt;p&gt;Using the right element for the job improves
+       accessibility, SEO, and developer experience.&lt;/p&gt;
+    &lt;figure&gt;
+      &lt;img src="diagram.png" alt="Semantic element hierarchy"&gt;
+      &lt;figcaption&gt;Figure 1 – The semantic element tree.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+  &lt;/article&gt;
+
+  &lt;aside&gt;
+    &lt;h3&gt;Related Resources&lt;/h3&gt;
+    &lt;p&gt;See the MDN Web Docs for a full list of HTML5 elements.&lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;&amp;copy; 2026 My Website&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+
+          <!-- Demo: Semantic vs Div Soup -->
+          
+        </article>
+
+        <!-- Card – Block vs Inline Elements -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">view_stream</span></div>
+            <div>
+              <h2 class="title-large">Block vs Inline Elements</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Every HTML element has a default <strong>display behaviour</strong>
+            that determines how it flows within the page. Understanding the
+            difference between <strong>block</strong> and <strong>inline</strong>
+            elements is essential  -  it controls whether elements stack vertically
+            or sit side-by-side, and what CSS properties (like <code>width</code>,
+            <code>height</code>, and <code>margin</code>) you can apply to them.
+          </p>
+          <ul class="concept-list">
+            <li><strong>Block elements</strong> (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;ul&gt;</code>) start on a <strong>new line</strong> and stretch to fill the full width of their parent container. You can set width, height, margin, and padding on all four sides.</li>
+            <li><strong>Inline elements</strong> (<code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;img&gt;</code>) flow <strong>within a line</strong> of text and only take up as much width as their content. Vertical margin and explicit width/height have <em>no effect</em> on inline elements.</li>
+            <li><strong>Inline-block</strong> combines both: the element flows inline but accepts width, height, and vertical margins  -  useful for buttons and badges.</li>
+          </ul>
+<pre><code>&lt;!-- Block elements stack vertically --&gt;
+&lt;div class="card"&gt;
+  &lt;h2&gt;Block-level heading&lt;/h2&gt;   &lt;!-- takes full width, new line --&gt;
+  &lt;p&gt;Block-level paragraph.&lt;/p&gt;   &lt;!-- takes full width, new line --&gt;
+&lt;/div&gt;
+
+&lt;!-- Inline elements sit side-by-side within text --&gt;
+&lt;p&gt;
+  Visit &lt;a href="/about"&gt;our about page&lt;/a&gt; for
+  &lt;strong&gt;more info&lt;/strong&gt; and &lt;em&gt;examples&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;!-- Inline-block: flows inline but accepts width/height --&gt;
+&lt;span style="display: inline-block; width: 100px; height: 30px;
+             background: teal; color: white; text-align: center;
+             line-height: 30px; border-radius: 4px;"&gt;
+  Badge
+&lt;/span&gt;</code></pre>
+
+          <!-- Demo: Block vs Inline Flow -->
+          
+        
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Element Flow Playground
+            </div>
+            <p class="body-small demo-desc">Add block, inline, and inline-block elements to see how they flow on the page.</p>
+            <div class="demo-btn-row" style="margin-bottom:12px;">
+              <button class="btn btn--filled" id="addBlockBtn">+ Block</button>
+              <button class="btn btn--outlined" id="addInlineBtn">+ Inline</button>
+              <button class="btn btn--outlined" id="addInlineBlockBtn">+ Inline-Block</button>
+              <button class="btn btn--text" id="clearFlowBtn"><span class="material-symbols-outlined icon-sm">refresh</span> Clear</button>
+            </div>
+            <div id="flowDemoContainer" style="min-height:80px; padding:12px; border:2px dashed var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-md); background:var(--md-sys-color-surface-container-lowest);"></div>
+            <p class="body-small" id="flowDemoCount" style="margin-top:8px; color:var(--md-sys-color-outline);"></p>
+          </div>
+
+        </article>
+
+        <!-- Card – Attributes, Links & Images -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">link</span></div>
+            <div>
+              <h2 class="title-large">Attributes, Links &amp; Images</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            HTML <strong>attributes</strong> provide extra information about
+            elements and are written inside the opening tag. Some attributes are
+            universal (available on every element), while others are specific to
+            certain tags. Getting attributes right is critical  -  for example, a
+            missing <code>alt</code> attribute on an image means screen readers
+            cannot describe the image to blind users, and a missing <code>href</code>
+            means a link goes nowhere.
+          </p>
+          <ul class="concept-list">
+            <li><strong>Global attributes</strong> work on any element: <code>id</code>, <code>class</code>, <code>style</code>, <code>title</code>, <code>data-*</code> (custom data), <code>hidden</code>, <code>tabindex</code>.</li>
+            <li><strong>Boolean attributes</strong> (<code>required</code>, <code>disabled</code>, <code>checked</code>, <code>hidden</code>) are true just by being present  -  they don't need a value.</li>
+            <li><code>&lt;a href&gt;</code> creates hyperlinks. Use <code>target="_blank"</code> with <code>rel="noopener noreferrer"</code> for security when opening external links in new tabs.</li>
+            <li><code>&lt;img&gt;</code> always needs <code>src</code> (the file path) and <code>alt</code> (a description). For responsive images, add <code>loading="lazy"</code> and use the <code>srcset</code> attribute to serve different sizes.</li>
+          </ul>
+<pre><code>&lt;!-- Global attributes: id, class, data-*, title --&gt;
+&lt;section id="features" class="container" data-section="2"
+         title="Product features"&gt;
+  &lt;h2&gt;Features&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;!-- Links: internal, external, and anchor --&gt;
+&lt;a href="/about"&gt;Internal link (same site)&lt;/a&gt;
+
+&lt;!-- External link: opens in new tab securely --&gt;
+&lt;a href="https://developer.mozilla.org"
+   target="_blank"
+   rel="noopener noreferrer"&gt;
+  MDN Web Docs ↗
+&lt;/a&gt;
+
+&lt;!-- Anchor link: scrolls to the element with id="features" --&gt;
+&lt;a href="#features"&gt;Jump to Features&lt;/a&gt;
+
+&lt;!-- Images: always include meaningful alt text --&gt;
+&lt;img src="images/hero.jpg"
+     alt="Developer working at a laptop in a modern office"
+     width="800" height="450"
+     loading="lazy"&gt;
+
+&lt;!-- Responsive image: serve different files by screen size --&gt;
+&lt;img srcset="images/hero-480.jpg 480w,
+             images/hero-800.jpg 800w,
+             images/hero-1200.jpg 1200w"
+     sizes="(max-width: 600px) 480px,
+            (max-width: 1000px) 800px,
+            1200px"
+     src="images/hero-800.jpg"
+     alt="Responsive hero image example"&gt;
+
+&lt;!-- Boolean attributes: just present = true --&gt;
+&lt;input type="email" required disabled&gt;
+&lt;!-- ↑ required and disabled have no ="value" needed --&gt;</code></pre>
+
+          <!-- Demo: Attribute Builder -->
+          
+        </article>
+
+        <!-- Card – Forms & Tables -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">table_chart</span></div>
+            <div>
+              <h2 class="title-large">Forms, Tables &amp; Multimedia</h2>
+              <span class="chip chip--html">HTML</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Beyond basic text and images, HTML provides powerful elements for
+            collecting user input, displaying tabular data, and embedding media.
+            Proper use of <code>&lt;label&gt;</code> elements linked to inputs via
+            the <code>for</code> attribute is essential  -  it makes forms usable
+            for keyboard-only and screen-reader users. Similarly, tables should
+            always include <code>&lt;thead&gt;</code> and <code>&lt;th scope&gt;</code>
+            so assistive technologies can read column headers aloud.
+          </p>
+<pre><code>&lt;!-- Accessible form: every input has a linked label,
+     required fields are marked, and inputs use the correct type
+     so mobile keyboards show the right layout. --&gt;
+&lt;form action="/register" method="POST"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Create an Account&lt;/legend&gt;
+
+    &lt;label for="email"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"
+           placeholder="you@example.com" required&gt;
+
+    &lt;label for="password"&gt;Password (min 8 characters)&lt;/label&gt;
+    &lt;input type="password" id="password" name="password"
+           minlength="8" required&gt;
+
+    &lt;label for="dob"&gt;Date of birth&lt;/label&gt;
+    &lt;input type="date" id="dob" name="dob"&gt;
+
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;!-- Accessible table with scope attributes --&gt;
+&lt;table&gt;
+  &lt;caption&gt;Browser Market Share – 2025&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Browser&lt;/th&gt;
+      &lt;th scope="col"&gt;Share&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;65%&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Safari&lt;/td&gt;&lt;td&gt;19%&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;3%&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;!-- Responsive video embed --&gt;
+&lt;video controls width="100%" poster="thumb.jpg"&gt;
+  &lt;source src="intro.mp4" type="video/mp4"&gt;
+  Your browser does not support the video element.
+&lt;/video&gt;</code></pre>
+
+          <!-- Demo: Live Form with Validation -->
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Live Form with HTML5 Validation
+            </div>
+            <p class="body-small demo-desc">
+              Try filling out the form below. HTML5 validation attributes (<code>required</code>, <code>type="email"</code>, <code>minlength</code>) provide built-in checking  -  no JavaScript needed for basic validation. Click <strong>Submit</strong> to test it, or type in the fields to see real-time feedback.
+            </p>
+            <div class="demo-area__preview" id="formDemoContainer">
+              <div style="max-width:400px;">
+                <div style="margin-bottom:14px;">
+                  <label class="label-large" style="display:block; margin-bottom:4px;">Full Name <span style="color:var(--md-sys-color-error);">*</span></label>
+                  <input type="text" id="formDemoName" required minlength="2" placeholder="Enter your name"
+                    style="width:100%; padding:10px 14px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); font-family:inherit; font-size:0.875rem; background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface); outline:none;">
+                  <span class="form-demo-feedback body-small" id="formDemoNameFb" style="display:block; margin-top:4px; min-height:1.2em;"></span>
+                </div>
+                <div style="margin-bottom:14px;">
+                  <label class="label-large" style="display:block; margin-bottom:4px;">Email <span style="color:var(--md-sys-color-error);">*</span></label>
+                  <input type="email" id="formDemoEmail" required placeholder="you@example.com"
+                    style="width:100%; padding:10px 14px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); font-family:inherit; font-size:0.875rem; background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface); outline:none;">
+                  <span class="form-demo-feedback body-small" id="formDemoEmailFb" style="display:block; margin-top:4px; min-height:1.2em;"></span>
+                </div>
+                <div style="margin-bottom:14px;">
+                  <label class="label-large" style="display:block; margin-bottom:4px;">Password <span style="color:var(--md-sys-color-error);">*</span></label>
+                  <input type="password" id="formDemoPass" required minlength="8" placeholder="Min 8 characters"
+                    style="width:100%; padding:10px 14px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); font-family:inherit; font-size:0.875rem; background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface); outline:none;">
+                  <span class="form-demo-feedback body-small" id="formDemoPassFb" style="display:block; margin-top:4px; min-height:1.2em;"></span>
+                </div>
+                <div style="margin-bottom:14px;">
+                  <label class="label-large" style="display:block; margin-bottom:4px;">Favourite Language</label>
+                  <select id="formDemoLang" style="width:100%; padding:10px 14px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); font-family:inherit; font-size:0.875rem; background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface);">
+                    <option value=""> -  Select  - </option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                  </select>
+                </div>
+                <button class="btn btn--filled" id="formDemoSubmitBtn" class="w-full">
+                  <span class="material-symbols-outlined">send</span> Submit
+                </button>
+                <div id="formDemoResult" style="margin-top:12px; font-size:0.875rem;"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Interactive HTML Editor -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">edit_note</span></div>
+            <div>
+              <h2 class="title-large">Try It Yourself  -  Live HTML Editor</h2>
+              <span class="chip chip--html">Interactive</span>
+            </div>
+          </div>
+          <p class="body-medium">
+            Edit the HTML below and click <strong>Run</strong> to render it live.
+            Try adding new elements like <code>&lt;img&gt;</code>,
+            <code>&lt;table&gt;</code>, or <code>&lt;form&gt;</code> to see how
+            the browser displays them. This is the fastest way to build intuition
+            for how HTML tags translate into visible content.
+          </p>
+          
+        <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Live HTML Editor
+            </div>
+            <p class="body-small demo-desc">Write HTML in the editor and click Run to see it rendered live.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <div style="flex:1; min-width:260px;">
+                <textarea id="htmlEditor" rows="10" spellcheck="false" style="width:100%; font-family:var(--md-sys-typescale-code-font); font-size:0.8125rem; padding:12px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); background:var(--md-sys-color-surface-container-highest); color:var(--md-sys-color-on-surface); resize:vertical;">&lt;h1 style=&quot;color:teal;&quot;&gt;Hello!&lt;/h1&gt;
+&lt;p&gt;Edit this HTML and click &lt;strong&gt;Run&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item one&lt;/li&gt;
+  &lt;li&gt;Item two&lt;/li&gt;
+&lt;/ul&gt;</textarea>
+                <div style="margin-top:8px; display:flex; gap:8px;">
+                  <button class="btn btn--filled" id="runHtmlBtn"><span class="material-symbols-outlined icon-sm">play_arrow</span> Run</button>
+                  <button class="btn btn--text" id="resetHtmlBtn"><span class="material-symbols-outlined icon-sm">refresh</span> Reset</button>
+                </div>
+              </div>
+              <div style="flex:1; min-width:260px;">
+                <iframe id="htmlPreview" style="width:100%; height:220px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); background:#fff;" sandbox="allow-same-origin"></iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- HTML Cheatsheet -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">description</span></div>
+            <div>
+              <h2 class="title-large">HTML Cheatsheet</h2>
+              <span class="chip chip--html">Quick Reference</span>
+            </div>
+          </div>
+
+          <h3 class="title-medium section-subtitle section-subtitle--first">Document Skeleton</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- content here --&gt;
+  &lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <h3 class="title-medium section-subtitle">Common Elements</h3>
+          <div class="overflow-x">
+            <table class="cheatsheet-table">
+              <thead><tr>
+                <th>Element</th>
+                <th>Purpose</th>
+                <th>Type</th>
+              </tr></thead>
+              <tbody>
+                <tr><td><code>&lt;h1&gt;–&lt;h6&gt;</code></td><td>Headings (h1 largest)</td><td>Block</td></tr>
+                <tr><td><code>&lt;p&gt;</code></td><td>Paragraph</td><td>Block</td></tr>
+                <tr><td><code>&lt;a href=""&gt;</code></td><td>Hyperlink</td><td>Inline</td></tr>
+                <tr><td><code>&lt;img src="" alt=""&gt;</code></td><td>Image (self-closing)</td><td>Inline</td></tr>
+                <tr><td><code>&lt;ul&gt; / &lt;ol&gt; / &lt;li&gt;</code></td><td>Unordered / ordered list</td><td>Block</td></tr>
+                <tr><td><code>&lt;div&gt; / &lt;span&gt;</code></td><td>Block / inline container</td><td>Block / Inline</td></tr>
+                <tr><td><code>&lt;strong&gt; / &lt;em&gt;</code></td><td>Important / emphasised text</td><td>Inline</td></tr>
+                <tr><td><code>&lt;table&gt; / &lt;tr&gt; / &lt;td&gt;</code></td><td>Table / row / cell</td><td>Block</td></tr>
+                <tr><td><code>&lt;form&gt; / &lt;input&gt; / &lt;button&gt;</code></td><td>Form / input field / button</td><td>Block / Inline</td></tr>
+                <tr><td><code>&lt;br&gt; / &lt;hr&gt;</code></td><td>Line break / horizontal rule</td><td>Self-closing</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="title-medium section-subtitle">Semantic Landmarks</h3>
+          <div class="pill-row">
+            <code>&lt;header&gt;</code>
+            <code>&lt;nav&gt;</code>
+            <code>&lt;main&gt;</code>
+            <code>&lt;article&gt;</code>
+            <code>&lt;section&gt;</code>
+            <code>&lt;aside&gt;</code>
+            <code>&lt;footer&gt;</code>
+            <code>&lt;figure&gt;</code>
+          </div>
+
+          <h3 class="title-medium section-subtitle">Key Attributes</h3>
+          <div class="pill-row">
+            <code>id</code>
+            <code>class</code>
+            <code>href</code>
+            <code>src / alt</code>
+            <code>target="_blank"</code>
+            <code>rel="noopener noreferrer"</code>
+            <code>required</code>
+            <code>loading="lazy"</code>
+            <code>data-*</code>
+          </div>
+
+          <h3 class="title-medium section-subtitle">Forms</h3>
+<pre><code>&lt;form action="/submit" method="POST"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" required&gt;
+  &lt;input type="password" minlength="8"&gt;
+  &lt;select&gt;&lt;option&gt;Choice&lt;/option&gt;&lt;/select&gt;
+  &lt;textarea rows="4"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+          <h3 class="title-medium section-subtitle">Entities</h3>
+          <div class="pill-row pill-row--lg">
+            <code>&amp;lt; → &lt;</code>
+            <code>&amp;gt; → &gt;</code>
+            <code>&amp;amp; → &amp;</code>
+            <code>&amp;nbsp; → (space)</code>
+            <code>&amp;copy; → ©</code>
+          </div>
+        </article>
+
+        <!-- Key Takeaways -->
+        <article class="card card--filled fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">lightbulb</span></div>
+            <div>
+              <h2 class="title-large">Key Takeaways</h2>
+            </div>
+          </div>
+          <ul class="concept-list">
+            <li>Always include <code>&lt;!DOCTYPE html&gt;</code>, <code>charset</code>, and <code>viewport</code> meta tags  -  they prevent layout and encoding bugs.</li>
+            <li>Choose semantic elements (<code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>) over generic <code>&lt;div&gt;</code> tags for better accessibility and SEO.</li>
+            <li>Understand <strong>block vs inline</strong>: block elements stack and accept width/height; inline elements flow within text and ignore vertical margin.</li>
+            <li>Use correct attributes: <code>alt</code> on every image, <code>rel="noopener noreferrer"</code> on external <code>target="_blank"</code> links, and <code>loading="lazy"</code> for off-screen images.</li>
+            <li>Link every <code>&lt;label&gt;</code> to its input with the <code>for</code> attribute  -  this is not optional for accessible forms.</li>
+            <li>Use <code>&lt;thead&gt;</code> and <code>&lt;th scope&gt;</code> in tables so screen readers can announce column headers.</li>
+            <li>Use HTML5 validation attributes (<code>required</code>, <code>type="email"</code>, <code>minlength</code>) for client-side form validation before JavaScript is even needed.</li>
+            <li>Validate your HTML using the W3C validator to catch errors early.</li>
+          </ul>
+        
+          
+
+        </article>
+      </section>
+      <section class="tutorial-section" id="section-css" role="tabpanel">
+        <!-- Learning Objectives -->
+        <article class="card card--filled fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">flag</span></div>
+            <div>
+              <h2 class="title-large">Learning Objectives</h2>
+            </div>
+          </div>
+          <p class="body-large">By the end of this section you will be able to:</p>
+          <ul class="concept-list">
+            <li>Write CSS rules using element, class, ID, and combinatory selectors.</li>
+            <li>Explain the box model and why <code>box-sizing: border-box</code> prevents layout surprises.</li>
+            <li>Use Flexbox and Grid to build responsive, modern layouts.</li>
+            <li>Understand the cascade and specificity to debug style conflicts.</li>
+            <li>Use <code>position</code> (relative, absolute, fixed, sticky) to place elements precisely.</li>
+            <li>Build mobile-first responsive designs using media queries.</li>
+            <li>Choose the right CSS units (rem, em, %, vh/vw) for scalable designs.</li>
+            <li>Add smooth transitions, keyframe animations, and CSS custom properties for theming.</li>
+          </ul>
+        </article>
+
+        <!-- What is CSS? -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">palette</span></div>
+            <div>
+              <h2 class="title-large">What is CSS?</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            CSS (Cascading Style Sheets) controls the <em>visual presentation</em>
+            of HTML elements  -  colours, fonts, spacing, layout, and animations.
+            By separating content (HTML) from presentation (CSS), you can
+            completely redesign a website without touching any HTML. This
+            separation is a core principle of web development because it makes
+            sites easier to maintain, faster to update, and more accessible.
+          </p>
+          <p class="body-large">
+            <strong>Why does this matter?</strong> Imagine a site with 50 pages.
+            Without CSS, every visual change means editing all 50 HTML files.
+            With one shared stylesheet, a single line change  -  say, updating
+            a brand colour  -  propagates instantly across the entire site.
+          </p>
+          <ul class="concept-list">
+            <li><strong>Selectors</strong> target which HTML elements to style (e.g., <code>p</code>, <code>.card</code>, <code>#hero</code>).</li>
+            <li><strong>Properties</strong> define what to change (e.g., <code>color</code>, <code>font-size</code>, <code>margin</code>).</li>
+            <li><strong>Values</strong> specify the desired setting (e.g., <code>red</code>, <code>1.5rem</code>, <code>24px</code>).</li>
+            <li>The <strong>cascade</strong> determines which rule wins when multiple rules target the same element  -  specificity and source order matter.</li>
+          </ul>
+
+          <!-- Demo: CSS On/Off Toggle -->
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: CSS On / Off  -  See the Difference
+            </div>
+            <p class="body-small demo-desc">
+              Toggle CSS on and off to see how the same HTML looks with and without styling. This demonstrates exactly what CSS does  -  it transforms raw, unstyled content into a polished, readable layout.
+            </p>
+            <div class="demo-btn-row mb-lg">
+              <button class="btn btn--filled" id="cssOnBtn">
+                <span class="material-symbols-outlined">palette</span> CSS On
+              </button>
+              <button class="btn btn--outlined" id="cssOffBtn">
+                <span class="material-symbols-outlined">format_paint</span> CSS Off
+              </button>
+            </div>
+            <div class="demo-area__preview" id="cssToggleDemoPreview" style="transition: all 0.3s ease;"></div>
+          </div>
+        </article>
+
+        <!-- Card – CSS Colors -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">colorize</span></div>
+            <div>
+              <h2 class="title-large">Colours  -  RGB, HEX &amp; HSL</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            CSS supports multiple colour formats. <strong>Named colours</strong>
+            (<code>red</code>, <code>teal</code>) are readable but limited to
+            ~140 options. <strong>HEX</strong> (<code>#1a6b52</code>) is the most
+            common format  -  6 hex digits representing red, green, and blue.
+            <strong>RGB</strong> (<code>rgb(26, 107, 82)</code>) uses decimal
+            values 0–255 for each channel. <strong>HSL</strong>
+            (<code>hsl(155, 61%, 26%)</code>) defines hue (0–360°), saturation
+            (0–100%), and lightness (0–100%)  -  it is the most intuitive for
+            choosing colour variations because you can adjust lightness and
+            saturation independently. All three formats also support an
+            <strong>alpha channel</strong> for transparency (e.g.,
+            <code>rgba()</code>, <code>hsla()</code>, or 8-digit hex).
+          </p>
+<pre><code>/* Named colours (limited but readable) */
+color: red;
+color: teal;
+color: cornflowerblue;
+
+/* HEX  -  #RRGGBB (most common) */
+color: #1a6b52;          /* 6-digit hex */
+color: #1a6b52cc;        /* 8-digit hex with alpha (80% opacity) */
+
+/* RGB  -  red, green, blue (0–255) */
+color: rgb(26, 107, 82);
+color: rgba(26, 107, 82, 0.8);   /* with alpha */
+
+/* HSL  -  hue (0–360), saturation (%), lightness (%) */
+color: hsl(155, 61%, 26%);
+color: hsla(155, 61%, 26%, 0.8); /* with alpha */</code></pre>
+
+          <!-- Demo: Colour Format Explorer -->
+          
+        </article>
+
+        <!-- Card – Typography -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">text_fields</span></div>
+            <div>
+              <h2 class="title-large">Typography  -  Fonts, Size &amp; Spacing</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Typography controls how text looks and reads. The key properties are
+            <code>font-family</code> (the typeface), <code>font-size</code>
+            (how big), <code>font-weight</code> (how bold), <code>line-height</code>
+            (vertical spacing between lines), <code>text-align</code> (left, center,
+            right, justify), and <code>text-decoration</code> (underline, strikethrough).
+            Good typography makes content <strong>readable</strong> and
+            <strong>scannable</strong>  -  a page with 1.6 line-height and proper
+            heading sizes is dramatically easier to read than one with default spacing.
+          </p>
+<pre><code>/* Font stack  -  fallback chain from specific to generic */
+body {
+  font-family: "Outfit", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;           /* 16px default */
+  font-weight: 400;          /* Normal weight */
+  line-height: 1.6;          /* 1.6x the font size  -  optimal for readability */
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;         /* 40px */
+  font-weight: 700;          /* Bold */
+  line-height: 1.2;          /* Tighter for headings */
+  letter-spacing: -0.5px;    /* Slightly tighter tracking */
+}
+
+a {
+  text-decoration: none;     /* Remove default underline */
+  color: teal;
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover for clarity */
+}
+
+.caption {
+  font-size: 0.75rem;
+  font-style: italic;
+  text-transform: uppercase;  /* ALL CAPS */
+  letter-spacing: 1px;
+}</code></pre>
+
+          <!-- Demo: Typography Playground -->
+          
+        </article>
+
+        <!-- Card – Backgrounds -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">gradient</span></div>
+            <div>
+              <h2 class="title-large">Backgrounds &amp; Gradients</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            CSS backgrounds go far beyond solid colours. You can apply images,
+            gradients, and even multiple layered backgrounds to any element.
+            <strong>Linear gradients</strong> transition between colours along a
+            straight line. <strong>Radial gradients</strong> radiate from a center
+            point. Combining backgrounds with <code>background-size</code>,
+            <code>background-position</code>, and <code>background-repeat</code>
+            gives you full control over how images and patterns fill their container.
+          </p>
+<pre><code>/* Solid colour */
+background-color: #f0f4f8;
+
+/* Linear gradient  -  direction + colour stops */
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+/* Radial gradient  -  centre outward */
+background: radial-gradient(circle, #ffecd2 0%, #fcb69f 100%);
+
+/* Background image with cover sizing */
+background-image: url("hero.jpg");
+background-size: cover;       /* Scale to fill container */
+background-position: center;  /* Centre the image */
+background-repeat: no-repeat;
+
+/* Multiple backgrounds (layered, first on top) */
+background:
+  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+  url("hero.jpg") center / cover no-repeat;</code></pre>
+
+          <!-- Demo: Gradient Builder -->
+          
+        </article>
+
+        <!-- Selectors & Specificity -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">tune</span></div>
+            <div>
+              <h2 class="title-large">Selectors &amp; Specificity</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            CSS offers many ways to target elements. Understanding
+            <strong>specificity</strong>  -  the system that decides which rule wins
+            when two rules compete  -  is crucial. Specificity is calculated as a
+            three-part score: <em>IDs &gt; Classes &gt; Elements</em>. The higher
+            the score, the more weight a rule carries. Knowing this saves hours of
+            frustration wondering "why isn't my style applying?"
+          </p>
+<pre><code>/* ===== ELEMENT SELECTOR (specificity 0-0-1) =====
+   Targets every &lt;p&gt; on the page.
+   Low specificity  -  easy to override. */
+p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== CLASS SELECTOR (specificity 0-1-0) =====
+   Targets any element with class="highlight".
+   Best practice: prefer classes over IDs for styling
+   because they are reusable across many elements. */
+.highlight {
+  background-color: #fff3cd;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* ===== ID SELECTOR (specificity 1-0-0) =====
+   Targets the ONE element with id="page-title".
+   Very high specificity  -  hard to override later.
+   Best practice: avoid IDs for styling; use them for
+   JS hooks and anchor links instead. */
+#page-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ===== COMBINATORS =====
+   Descendant selector: only &lt;a&gt; tags inside &lt;nav&gt; */
+nav a {
+  text-decoration: none;
+  color: teal;
+  transition: color 0.2s ease;
+}
+
+/* Pseudo-class: style on hover state */
+nav a:hover {
+  color: darkcyan;
+  text-decoration: underline;
+}
+
+/* ===== SPECIFICITY IN ACTION =====
+   Both rules target the same element:
+   .card p       → specificity 0-1-1
+   p.intro       → specificity 0-1-1  (tie → last one wins)
+   #hero .card p → specificity 1-1-1  (highest → always wins) */</code></pre>
+
+          <!-- Demo: Specificity Calculator -->
+          
+        </article>
+
+        <!-- The Box Model -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">check_box_outline_blank</span></div>
+            <div>
+              <h2 class="title-large">The Box Model</h2>
+              <span class="chip chip--css">Core Concept</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Every HTML element is rendered as a rectangular <strong>box</strong>
+            with four layers: <strong>content</strong> (the text or image),
+            <strong>padding</strong> (space between content and border),
+            <strong>border</strong> (the visible edge), and
+            <strong>margin</strong> (space outside the border separating elements).
+          </p>
+          <p class="body-large">
+            <strong>Why <code>box-sizing: border-box</code> matters:</strong>
+            By default, <code>width</code> only controls the content area  -  padding
+            and border are added <em>on top</em>, making elements wider than
+            expected. Setting <code>box-sizing: border-box</code> includes padding
+            and border within the declared width, which makes layout calculations
+            predictable. Most modern CSS resets apply this globally.
+          </p>
+<pre><code>/* Apply border-box globally  -  this is considered
+   best practice in every modern project. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 300px;        /* Total width = 300px (including padding + border) */
+  padding: 20px;       /* Inner spacing */
+  border: 2px solid #ccc;
+  margin: 16px auto;   /* 16px vertical gap; auto centres horizontally */
+  border-radius: 12px; /* Rounded corners */
+}</code></pre>
+
+          <!-- Interactive Box Model Visualiser -->
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">deployed_code</span>
+              Interactive Box Model Visualiser
+            </div>
+            <p class="body-small demo-desc">
+              Use the buttons to adjust padding and margin on the box below.
+              Watch how each layer of the box model grows and shrinks in real time.
+            </p>
+            <div id="boxModelDemo" style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+              <!-- Outer margin layer (grey background) -->
+              <div id="boxModelMarginLayer" style="background:var(--md-sys-color-surface-container-high); border-radius:12px; display:inline-block; transition:all 0.3s ease; position:relative;">
+                <span class="label-small" style="position:absolute; top:2px; left:8px; color:var(--md-sys-color-outline);">margin</span>
+                <!-- Padding layer (dashed border) -->
+                <div id="boxModelVisual" style="background:var(--md-sys-color-surface-container); padding:20px; border:3px dashed var(--md-sys-color-primary); margin:16px; display:inline-block; text-align:center; border-radius:8px; transition:all 0.3s ease; position:relative;">
+                  <span class="label-small" style="position:absolute; top:2px; left:8px; color:var(--md-sys-color-primary);">padding</span>
+                  <!-- Content -->
+                  <div style="background:var(--md-sys-color-primary-container); padding:24px 32px; border-radius:4px; font-size:0.875rem; font-weight:600; color:var(--md-sys-color-on-primary-container);">
+                    Content Area
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+                <button class="btn btn--tonal" id="bmPaddingPlus">+ Padding</button>
+                <button class="btn btn--tonal" id="bmPaddingMinus">&#x2212; Padding</button>
+                <button class="btn btn--tonal" id="bmMarginPlus">+ Margin</button>
+                <button class="btn btn--tonal" id="bmMarginMinus">&#x2212; Margin</button>
+                <button class="btn btn--outlined" id="bmReset">Reset</button>
+              </div>
+              <p class="body-small" id="boxModelInfo" style="color:var(--md-sys-color-on-surface-variant); font-family:var(--md-sys-typescale-code-font);">padding: 20px;  margin: 16px;</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Flexbox & Grid -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">grid_view</span></div>
+            <div>
+              <h2 class="title-large">Layout with Flexbox &amp; Grid</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Before Flexbox and Grid, developers used floats and absolute positioning
+            to build layouts  -  techniques that were fragile and hard to maintain.
+            <strong>Flexbox</strong> handles one-dimensional layouts (rows <em>or</em>
+            columns), while <strong>CSS Grid</strong> handles two-dimensional layouts
+            (rows <em>and</em> columns simultaneously). Choosing the right tool
+            means your layouts will be responsive, readable, and far easier to debug.
+          </p>
+<pre><code>/* ===== FLEXBOX: Navigation bar =====
+   Items flow in a row, centred vertically,
+   with equal spacing between them. */
+.navbar {
+  display: flex;
+  align-items: center;      /* vertical centre */
+  justify-content: space-between;
+  padding: 12px 24px;
+  gap: 16px;                /* space between flex children */
+}
+
+/* Make the nav responsive: stack vertically on small screens */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===== CSS GRID: Card gallery =====
+   Auto-fill columns that are at least 280px wide.
+   The grid adapts from 1 to 3+ columns automatically. */
+.card-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+/* Span a featured card across two columns on wide screens */
+.card-gallery .featured {
+  grid-column: span 2;
+}</code></pre>
+
+          <!-- Demo: Flexbox Playground -->
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Flexbox Playground
+            </div>
+            <p class="body-small demo-desc">
+              Change the Flexbox properties below and watch how the child items rearrange in real time. This is the fastest way to build intuition for <code>justify-content</code>, <code>align-items</code>, and <code>flex-direction</code>.
+            </p>
+            <div class="flex-wrap-row mb-lg">
+              <div class="flex-control">
+                <label class="label-large">flex-direction</label>
+                <select id="flexDirSelect" class="demo-select">
+                  <option value="row" selected>row</option>
+                  <option value="row-reverse">row-reverse</option>
+                  <option value="column">column</option>
+                  <option value="column-reverse">column-reverse</option>
+                </select>
+              </div>
+              <div class="flex-control">
+                <label class="label-large">justify-content</label>
+                <select id="flexJustifySelect" class="demo-select">
+                  <option value="flex-start" selected>flex-start</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="center">center</option>
+                  <option value="space-between">space-between</option>
+                  <option value="space-around">space-around</option>
+                  <option value="space-evenly">space-evenly</option>
+                </select>
+              </div>
+              <div class="flex-control">
+                <label class="label-large">align-items</label>
+                <select id="flexAlignSelect" class="demo-select">
+                  <option value="stretch" selected>stretch</option>
+                  <option value="flex-start">flex-start</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="center">center</option>
+                  <option value="baseline">baseline</option>
+                </select>
+              </div>
+              <div class="flex-control">
+                <label class="label-large">gap</label>
+                <select id="flexGapSelect" class="demo-select">
+                  <option value="0px">0px</option>
+                  <option value="8px" selected>8px</option>
+                  <option value="16px">16px</option>
+                  <option value="24px">24px</option>
+                </select>
+              </div>
+            </div>
+            <div id="flexDemoContainer" style="display:flex; min-height:140px; border:2px dashed var(--md-sys-color-primary); border-radius:var(--md-sys-shape-corner-md); padding:12px; transition:all 0.3s ease; background:var(--md-sys-color-surface-container-lowest);">
+              <div style="background:#003844; border:2px solid #00e5ff; padding:14px 20px; border-radius:8px; font-weight:600; font-size:0.8125rem; color:#00e5ff;">A</div>
+              <div style="background:#520035; border:2px solid #ff2d95; padding:14px 20px; border-radius:8px; font-weight:600; font-size:0.8125rem; color:#ff2d95;">B</div>
+              <div style="background:#1a2000; border:2px solid #b8ff00; padding:14px 20px; border-radius:8px; font-weight:600; font-size:0.8125rem; color:#b8ff00;">C</div>
+              <div style="background:var(--md-sys-color-secondary-container); border:2px solid var(--md-sys-color-secondary); padding:14px 20px; border-radius:8px; font-weight:600; font-size:0.8125rem; color:#ff5cad;">D</div>
+            </div>
+            <pre class="demo-code-block"><code id="flexDemoCode"></code></pre>
+          </div>
+        </article>
+
+        <!-- CSS Positioning -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">open_with</span></div>
+            <div>
+              <h2 class="title-large">CSS Positioning</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            The <code>position</code> property controls <em>how</em> an element is
+            placed within the document flow. Understanding the five positioning modes
+            is essential for building overlays, sticky headers, tooltips, and any
+            layout where elements need to overlap or break out of normal flow.
+          </p>
+          <ul class="concept-list">
+            <li><code>static</code>  -  the default. Elements follow normal document flow. <code>top</code>/<code>left</code>/<code>right</code>/<code>bottom</code> have no effect.</li>
+            <li><code>relative</code>  -  the element stays in normal flow but can be <strong>offset</strong> from its original position. Crucially, it creates a <strong>positioning context</strong> for absolute children.</li>
+            <li><code>absolute</code>  -  the element is <strong>removed from flow</strong> and positioned relative to its nearest <code>positioned</code> ancestor (not <code>static</code>). If none exists, it positions relative to the <code>&lt;html&gt;</code> element.</li>
+            <li><code>fixed</code>  -  removed from flow and positioned relative to the <strong>viewport</strong>. It stays in place even when the user scrolls (used for sticky navbars and floating buttons).</li>
+            <li><code>sticky</code>  -  a hybrid: the element scrolls normally until it reaches a specified offset, then "sticks" in place. Useful for table headers and section labels.</li>
+          </ul>
+<pre><code>/* ===== RELATIVE + ABSOLUTE: Parent-child positioning =====
+   The parent is 'relative' so the child's 'absolute'
+   position is calculated from the parent, not the page. */
+.tooltip-wrapper {
+  position: relative;   /* Creates positioning context */
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;         /* Place above the parent */
+  left: 50%;
+  transform: translateX(-50%);  /* Centre horizontally */
+  background: #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  display: none;        /* Hidden by default */
+}
+
+.tooltip-wrapper:hover .tooltip {
+  display: block;       /* Show on hover */
+}
+
+/* ===== FIXED: Sticky navigation bar =====
+   Stays at the top of the viewport during scroll. */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;       /* Ensure it overlaps other content */
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== STICKY: Section header sticks while scrolling =====
+   Scrolls normally until 0px from the top, then sticks. */
+.section-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 12px 0;
+  z-index: 10;
+}</code></pre>
+
+          <!-- Demo: Position Playground -->
+          
+        
+          
+
+        
+          
+
+        
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Position Mode Playground
+            </div>
+            <p class="body-small" style="color:var(--md-sys-color-on-surface-variant); margin-bottom:12px;">
+              Change the position mode of the <strong style="color:var(--md-sys-color-secondary);">target box</strong> below. The grey parent has <code>position: relative</code> so it acts as the positioning context. Adjust the <code>top</code> and <code>left</code> offsets with the sliders.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+              <div style="flex:1; min-width:140px;">
+                <span class="label-large" style="display:block; margin-bottom:4px;">position</span>
+                <select id="positionModeSelect" style="width:100%; padding:8px 12px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); font-family:var(--md-sys-typescale-code-font); font-size:0.8125rem; background:var(--md-sys-color-surface-container-lowest); color:var(--md-sys-color-on-surface);">
+                  <option value="static">static</option>
+                  <option value="relative" selected>relative</option>
+                  <option value="absolute">absolute</option>
+                  <option value="fixed">fixed (simulated as absolute)</option>
+                  <option value="sticky">sticky</option>
+                </select>
+              </div>
+              <div style="flex:1; min-width:140px;">
+                <span class="label-large" style="display:block; margin-bottom:4px;">top: <span id="posTopVal">20</span>px</span>
+                <input type="range" id="posTopRange" min="-50" max="100" value="20" style="width:100%;">
+              </div>
+              <div style="flex:1; min-width:140px;">
+                <span class="label-large" style="display:block; margin-bottom:4px;">left: <span id="posLeftVal">20</span>px</span>
+                <input type="range" id="posLeftRange" min="-50" max="200" value="20" style="width:100%;">
+              </div>
+            </div>
+            <div style="position:relative; background:var(--md-sys-color-surface-container-high); border:2px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-md); height:200px; overflow:hidden; padding:12px;">
+              <span class="label-small" style="position:absolute; top:4px; left:8px; color:var(--md-sys-color-outline);">parent (position: relative)</span>
+              <div style="background:var(--md-sys-color-surface-container-high); border:1px solid var(--md-sys-color-outline-variant); padding:8px 14px; border-radius:6px; font-size:0.75rem; color:var(--md-sys-color-on-surface-variant); margin-top:24px;">Sibling before</div>
+              <div id="positionDemoBox" style="background:var(--md-sys-color-secondary-container); border:2px solid var(--md-sys-color-secondary); padding:10px 18px; border-radius:8px; font-size:0.8125rem; font-weight:600; color:var(--md-sys-color-on-secondary-container); display:inline-block; position:relative; top:20px; left:20px; z-index:5;">Target Box</div>
+              <div style="background:var(--md-sys-color-surface-container-high); border:1px solid var(--md-sys-color-outline-variant); padding:8px 14px; border-radius:6px; font-size:0.75rem; color:var(--md-sys-color-on-surface-variant);">Sibling after</div>
+            </div>
+            <pre style="margin-top:12px; margin-bottom:0;"><code id="positionDemoCode" style="display:block; white-space:pre;"></code></pre>
+          </div>
+
+        </article>
+
+        <!-- Responsive Design & Media Queries -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">devices</span></div>
+            <div>
+              <h2 class="title-large">Responsive Design &amp; Media Queries</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            <strong>Responsive design</strong> ensures your website looks and works
+            well on every screen size  -  from phones to ultra-wide monitors.
+            The key tool is the <code>@media</code> rule, which lets you apply
+            CSS conditionally based on viewport width, orientation, or other
+            features. Combined with fluid layouts (Flexbox, Grid, percentage widths)
+            and the <code>viewport</code> meta tag in HTML, media queries let you
+            build a single codebase that adapts to all devices.
+          </p>
+          <p class="body-large">
+            <strong>Mobile-first approach:</strong> write your base CSS for small
+            screens, then use <code>min-width</code> media queries to add complexity
+            for larger screens. This is the industry standard because it keeps the
+            base styles simple and loads less CSS on slower mobile connections.
+          </p>
+<pre><code>/* ===== MOBILE-FIRST: Base styles (phones, &lt;600px) ===== */
+.container {
+  padding: 16px;
+  max-width: 100%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;  /* Single column on mobile */
+  gap: 16px;
+}
+
+/* ===== TABLET: 600px and up ===== */
+@media (min-width: 600px) {
+  .container {
+    padding: 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);  /* Two columns */
+  }
+}
+
+/* ===== DESKTOP: 1024px and up ===== */
+@media (min-width: 1024px) {
+  .container {
+    padding: 32px;
+    max-width: 960px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);  /* Three columns */
+    gap: 24px;
+  }
+}
+
+/* ===== ORIENTATION &amp; PREFERENCE QUERIES ===== */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Compact layout for landscape phones */
+  .hero { padding: 16px; }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Dark mode overrides */
+  :root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Disable animations for users who prefer reduced motion */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}</code></pre>
+
+          <!-- Demo: Responsive Viewport Simulator -->
+          
+        </article>
+
+        <!-- CSS Units -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">straighten</span></div>
+            <div>
+              <h2 class="title-large">CSS Units  -  When to Use What</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Choosing the right CSS unit is important for building layouts that scale
+            correctly across devices and respect user preferences. A common mistake
+            is using <code>px</code> for everything  -  this ignores the user's browser
+            font-size settings and creates rigid layouts that don't adapt.
+          </p>
+          <ul class="concept-list">
+            <li><code>px</code>  -  absolute pixels. Use for borders, shadows, and small fixed details. Avoid for font sizes and layout widths.</li>
+            <li><code>rem</code>  -  relative to the <strong>root</strong> (<code>&lt;html&gt;</code>) font size (usually 16px). Best for font sizes, spacing, and component sizing because it scales with user preferences.</li>
+            <li><code>em</code>  -  relative to the <strong>parent element's</strong> font size. Useful for padding/margin that should scale with text, but compounds in nested elements (1.2em inside 1.2em = 1.44× the root).</li>
+            <li><code>%</code>  -  relative to the parent's dimension. Ideal for fluid widths (<code>width: 100%</code>) and responsive images.</li>
+            <li><code>vh</code> / <code>vw</code>  -  1% of viewport height/width. Great for full-screen sections (<code>min-height: 100vh</code>) and hero banners.</li>
+            <li><code>ch</code>  -  width of the "0" character. Perfect for setting readable line lengths (<code>max-width: 65ch</code>).</li>
+          </ul>
+<pre><code>/* Best practice: use rem for type and spacing, % or viewport
+   units for layout, and px only for fine details. */
+
+html {
+  font-size: 16px;        /* 1rem = 16px (browser default) */
+}
+
+body {
+  font-size: 1rem;        /* 16px  -  scales with user settings */
+  line-height: 1.6;       /* Unitless  -  multiplier of font-size */
+}
+
+h1 { font-size: 2.5rem; }   /* 40px at default, but scales */
+h2 { font-size: 1.75rem; }  /* 28px at default */
+
+.container {
+  max-width: 65ch;        /* ~65 characters wide  -  optimal readability */
+  padding: 2rem;          /* Scales with root font size */
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 100vh;      /* Full viewport height */
+  padding: 5vw;           /* Responsive padding */
+}
+
+.border-detail {
+  border: 1px solid #ccc; /* px is fine for thin borders */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); /* px for shadows */
+}</code></pre>
+
+          <!-- Demo: Unit Comparison Visualiser -->
+          
+        </article>
+
+        <!-- Transitions & Animations + CSS Variables -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">animation</span></div>
+            <div>
+              <h2 class="title-large">Transitions, Animations &amp; Custom Properties</h2>
+              <span class="chip chip--css">CSS</span>
+            </div>
+          </div>
+          <p class="body-large">
+            <strong>Transitions</strong> smoothly animate property changes between
+            two states (e.g., hover effects). <strong>Keyframe animations</strong>
+            allow multi-step, repeating, or auto-playing sequences. Both are
+            performant because the browser's compositor handles them  -  they run
+            at 60fps without blocking JavaScript.
+          </p>
+          <p class="body-large">
+            <strong>CSS custom properties (variables)</strong> let you define
+            reusable values with <code>--name: value</code> and reference them
+            with <code>var(--name)</code>. They cascade like regular properties
+            and can be changed dynamically with JavaScript, making them perfect
+            for theming and design tokens.
+          </p>
+<pre><code>/* ===== CSS CUSTOM PROPERTIES (VARIABLES) =====
+   Define once in :root, reuse everywhere. */
+:root {
+  --color-primary: #1a6b52;
+  --color-surface: #f8faf6;
+  --radius-md: 12px;
+  --transition-standard: 300ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ===== TRANSITIONS =====
+   Smoothly animate between two states (e.g., default → hover).
+   Only animate transform and opacity for best performance. */
+.btn {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  /* Transition multiple properties */
+  transition: transform var(--transition-standard),
+              box-shadow var(--transition-standard);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ===== KEYFRAME ANIMATIONS =====
+   Multi-step animations that can loop and play automatically. */
+@keyframes fadeSlideIn {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeSlideIn 0.5s ease-out forwards;
+}
+
+/* Stagger cards: each child animates slightly later */
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+.card:nth-child(4) { animation-delay: 0.3s; }
+
+/* ===== RESPECT USER PREFERENCES ===== */
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; }
+  .btn  { transition: none; }
+}</code></pre>
+
+          <!-- Demo: Transitions & Animations Playground -->
+          
+        </article>
+
+        <!-- Interactive CSS Editor -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">edit_note</span></div>
+            <div>
+              <h2 class="title-large">Try It Yourself  -  Live CSS Editor</h2>
+              <span class="chip chip--css">Interactive</span>
+            </div>
+          </div>
+          <p class="body-medium">
+            Write CSS rules in the editor and click <strong>Run</strong> to apply
+            them to the preview below. Try changing <code>color</code>,
+            <code>font-family</code>, <code>display: flex</code>, or
+            <code>border-radius</code>. Notice how the styles scope only to the
+            preview area without affecting the rest of the page.
+          </p>
+          
+        <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Live CSS Editor
+            </div>
+            <p class="body-small demo-desc">Edit the CSS and click Run to see it applied to the sample HTML below.</p>
+            <details style="margin-bottom:12px;">
+              <summary style="cursor:pointer; font-size:0.8125rem; font-weight:600; color:var(--md-sys-color-primary); padding:6px 0;">Show sample HTML (what you are styling)</summary>
+              <pre style="margin-top:8px; font-size:0.75rem;"><code id="cssHtmlRef" style="display:block; white-space:pre;"></code></pre>
+            </details>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <div style="flex:1; min-width:260px;">
+                <textarea id="cssEditor" rows="10" spellcheck="false" style="width:100%; font-family:var(--md-sys-typescale-code-font); font-size:0.8125rem; padding:12px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); background:var(--md-sys-color-surface-container-highest); color:var(--md-sys-color-on-surface); resize:vertical;">h1 { color: teal; font-family: sans-serif; }
+p { color: #333; line-height: 1.6; }
+.highlight { background: yellow; padding: 2px 6px; }
+.note { font-style: italic; color: grey; }
+ul { list-style: square; padding-left: 20px; }
+a { color: teal; text-decoration: none; }</textarea>
+                <div style="margin-top:8px; display:flex; gap:8px;">
+                  <button class="btn btn--filled" id="runCssBtn"><span class="material-symbols-outlined icon-sm">play_arrow</span> Run</button>
+                  <button class="btn btn--text" id="resetCssBtn"><span class="material-symbols-outlined icon-sm">refresh</span> Reset</button>
+                </div>
+              </div>
+              <div style="flex:1; min-width:260px;">
+                <iframe id="cssPreview" style="width:100%; height:220px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); background:#fff;" sandbox="allow-same-origin"></iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CSS Cheatsheet -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">palette</span></div>
+            <div>
+              <h2 class="title-large">CSS Cheatsheet</h2>
+              <span class="chip chip--css">Quick Reference</span>
+            </div>
+          </div>
+
+          <h3 class="title-medium section-subtitle section-subtitle--first">Selectors</h3>
+          <div class="overflow-x">
+            <table class="cheatsheet-table">
+              <thead><tr>
+                <th>Selector</th>
+                <th>Targets</th>
+                <th>Specificity</th>
+              </tr></thead>
+              <tbody>
+                <tr><td><code>p</code></td><td>All <code>&lt;p&gt;</code> elements</td><td>0-0-1</td></tr>
+                <tr><td><code>.card</code></td><td>Elements with class="card"</td><td>0-1-0</td></tr>
+                <tr><td><code>#hero</code></td><td>Element with id="hero"</td><td>1-0-0</td></tr>
+                <tr><td><code>nav a</code></td><td>All <code>&lt;a&gt;</code> inside <code>&lt;nav&gt;</code></td><td>0-0-2</td></tr>
+                <tr><td><code>a:hover</code></td><td>Links on hover</td><td>0-1-1</td></tr>
+                <tr><td><code>*</code></td><td>All elements (universal)</td><td>0-0-0</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="title-medium section-subtitle">Box Model</h3>
+<pre><code>* { box-sizing: border-box; }   /* Include padding/border in width */
+
+.box {
+  width: 300px;   padding: 16px;
+  border: 2px solid #ccc;   margin: 24px auto;
+}</code></pre>
+
+          <h3 class="title-medium section-subtitle">Layout</h3>
+<pre><code>/* Flexbox (one-dimensional) */
+display: flex;   flex-direction: row | column;
+justify-content: flex-start | center | space-between;
+align-items: stretch | center | flex-start;
+gap: 16px;
+
+/* Grid (two-dimensional) */
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 24px;</code></pre>
+
+          <h3 class="title-medium section-subtitle">Positioning</h3>
+          <div class="overflow-x">
+            <table class="cheatsheet-table">
+              <tbody>
+                <tr><td><code>static</code></td><td>Default  -  normal flow, top/left ignored</td></tr>
+                <tr><td><code>relative</code></td><td>Offset from normal position; creates context for absolute children</td></tr>
+                <tr><td><code>absolute</code></td><td>Removed from flow; relative to nearest positioned ancestor</td></tr>
+                <tr><td><code>fixed</code></td><td>Relative to viewport; stays during scroll</td></tr>
+                <tr><td><code>sticky</code></td><td>Normal flow until offset reached, then sticks</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="title-medium section-subtitle">Units</h3>
+          <div class="pill-row">
+            <code>px  -  absolute pixels</code>
+            <code>rem  -  relative to root font-size</code>
+            <code>em  -  relative to parent font-size</code>
+            <code>%  -  relative to parent dimension</code>
+            <code>vh / vw  -  viewport height / width</code>
+            <code>ch  -  width of "0" character</code>
+          </div>
+
+          <h3 class="title-medium section-subtitle">Responsive</h3>
+<pre><code>/* Mobile-first: base styles for phones, then add complexity */
+@media (min-width: 600px) { /* tablet */ }
+@media (min-width: 1024px) { /* desktop */ }
+@media (prefers-color-scheme: dark) { /* dark mode */ }
+@media (prefers-reduced-motion: reduce) { /* a11y */ }</code></pre>
+
+          <h3 class="title-medium section-subtitle">Colours, Transitions &amp; Variables</h3>
+<pre><code>/* Colour formats */
+color: #1a6b52;                      /* HEX */
+color: rgb(26, 107, 82);             /* RGB */
+color: hsl(155, 61%, 26%);           /* HSL */
+color: rgba(26, 107, 82, 0.8);      /* with alpha */
+
+/* Custom properties */
+:root { --primary: #1a6b52; }
+.btn  { color: var(--primary); }
+
+/* Transition */
+transition: transform 300ms ease, opacity 300ms ease;
+
+/* Keyframe animation */
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+.el { animation: fadeIn 0.5s ease forwards; }</code></pre>
+        </article>
+
+        <!-- Key Takeaways -->
+        <article class="card card--filled fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">lightbulb</span></div>
+            <div>
+              <h2 class="title-large">Key Takeaways</h2>
+            </div>
+          </div>
+          <ul class="concept-list">
+            <li>Prefer <strong>class selectors</strong> over IDs for styling  -  they are reusable and have lower specificity, making overrides easier.</li>
+            <li>Always set <code>box-sizing: border-box</code> globally to avoid unexpected width calculations.</li>
+            <li>Use <strong>Flexbox</strong> for one-dimensional flows (navigation bars, centering) and <strong>Grid</strong> for two-dimensional layouts (card galleries, dashboards).</li>
+            <li>Understand <code>position</code>  -  use <code>relative</code> as a container for <code>absolute</code> children, <code>fixed</code> for viewport-locked elements, and <code>sticky</code> for scroll-aware headers.</li>
+            <li>Build <strong>mobile-first</strong>: write base styles for small screens, then add complexity with <code>@media (min-width: ...)</code> queries.</li>
+            <li>Use <code>rem</code> for font sizes and spacing, <code>%</code> or <code>vw/vh</code> for layout, and <code>px</code> only for fine details like borders.</li>
+            <li>Define reusable values with <strong>CSS custom properties</strong> (<code>--name: value</code>) and always respect <code>prefers-reduced-motion</code> for accessibility.</li>
+            <li>When a style "isn't working," check specificity first  -  a more specific rule elsewhere is probably winning the cascade.</li>
+          </ul>
+        
+          
+
+        </article>
+      </section>
+      <section class="tutorial-section" id="section-js" role="tabpanel">
+        <!-- Learning Objectives -->
+        <article class="card card--filled fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">flag</span></div>
+            <div>
+              <h2 class="title-large">Learning Objectives</h2>
+            </div>
+          </div>
+          <p class="body-large">By the end of this section you will be able to:</p>
+          <ul class="concept-list">
+            <li>Declare variables with <code>const</code> and <code>let</code> and explain why <code>var</code> is avoided.</li>
+            <li>Write functions (including arrow functions) and understand scope.</li>
+            <li>Use conditionals (<code>if/else</code>, <code>switch</code>, ternary) and loops (<code>for</code>, <code>for...of</code>, <code>while</code>).</li>
+            <li>Work with objects, destructuring, the spread operator, and template literals.</li>
+            <li>Select and modify DOM elements using both vanilla JS and jQuery.</li>
+            <li>Handle user events (click, input, submit) to build interactive UIs.</li>
+            <li>Handle errors gracefully with <code>try/catch</code> and throw custom errors.</li>
+            <li>Use Promises, <code>fetch()</code>, and <code>async/await</code> for asynchronous operations.</li>
+          </ul>
+        </article>
+
+        <!-- What is JavaScript? -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">bolt</span></div>
+            <div>
+              <h2 class="title-large">What is JavaScript?</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            JavaScript (JS) is the programming language of the web. While HTML
+            defines <em>what</em> content exists and CSS defines <em>how</em>
+            it looks, JavaScript defines <em>what happens</em> when users interact
+            with the page  -  clicking buttons, submitting forms, scrolling, typing,
+            or receiving new data from a server.
+          </p>
+          <p class="body-large">
+            <strong>Why does this matter?</strong> Without JavaScript, web pages
+            are static documents. JS transforms them into <em>applications</em>  - 
+            think of Google Maps, Spotify Web Player, or online banking. It is the
+            only programming language that runs natively in every web browser,
+            making it an essential skill for any web developer.
+          </p>
+          <ul class="concept-list">
+            <li>JS runs in the browser's <strong>JavaScript engine</strong> (e.g., V8 in Chrome)  -  no compilation step needed.</li>
+            <li>It is <strong>dynamically typed</strong>: variables can hold any data type without a type declaration.</li>
+            <li><strong>Event-driven</strong>: code executes in response to user actions or system events, not just top-to-bottom.</li>
+            <li>The <strong>DOM API</strong> lets JS read and modify every element on the page in real time.</li>
+          </ul>
+
+          <!-- Demo: Static vs Interactive -->
+          
+        </article>
+
+        <!-- Variables, Scope & Functions -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">data_object</span></div>
+            <div>
+              <h2 class="title-large">Variables, Scope &amp; Functions</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Modern JavaScript uses <code>const</code> (for values that never change)
+            and <code>let</code> (for values that need reassignment). The older
+            <code>var</code> keyword is avoided because it is <strong>function-scoped</strong>
+            rather than block-scoped, which leads to subtle bugs in loops and
+            conditionals. This is one of the most important best practices in JS.
+          </p>
+<pre><code>// ===== VARIABLES &amp; SCOPE =====
+
+const TAX_RATE = 0.1;    // const – value never changes
+let   cartTotal = 0;      // let – will be updated later
+
+// var is function-scoped  -  DO NOT use in modern code:
+// for (var i = 0; i &lt; 3; i++) { ... }
+// console.log(i); // 3  ← leaked outside the loop!
+
+// let is block-scoped  -  stays inside its block:
+// for (let j = 0; j &lt; 3; j++) { ... }
+// console.log(j); // ReferenceError ← correct behaviour
+
+// ===== FUNCTIONS =====
+
+// Traditional function declaration
+function calculateTotal(price, quantity) {
+  const subtotal = price * quantity;
+  const tax = subtotal * TAX_RATE;
+  return subtotal + tax;
+}
+
+// Arrow function (concise ES6+ syntax)
+const formatCurrency = (amount) =&gt; `$${amount.toFixed(2)}`;
+
+// Using both together
+const total = calculateTotal(29.99, 3);
+console.log(formatCurrency(total));  // "$98.97"
+
+// ===== ARRAYS &amp; HIGHER-ORDER FUNCTIONS =====
+
+const products = [
+  { name: "Laptop",  price: 999 },
+  { name: "Mouse",   price: 29  },
+  { name: "Monitor", price: 449 },
+];
+
+// .filter() returns a new array of items matching the condition
+const affordable = products.filter(p =&gt; p.price &lt; 500);
+
+// .map() transforms each item into a new value
+const names = products.map(p =&gt; p.name);
+
+// .reduce() accumulates values into a single result
+const totalPrice = products.reduce((sum, p) =&gt; sum + p.price, 0);
+
+console.log(affordable);  // [{name:"Mouse",...}, {name:"Monitor",...}]
+console.log(names);       // ["Laptop", "Mouse", "Monitor"]
+console.log(totalPrice);  // 1477</code></pre>
+
+          <!-- Demo: Variable Declaration Explorer -->
+          
+        </article>
+
+        <!-- Control Flow -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">alt_route</span></div>
+            <div>
+              <h2 class="title-large">Control Flow  -  Conditionals &amp; Loops</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Control flow statements let your code make <strong>decisions</strong>
+            (<code>if</code>/<code>else</code>, <code>switch</code>) and
+            <strong>repeat actions</strong> (<code>for</code>, <code>while</code>,
+            <code>for...of</code>). Without these, programs could only execute
+            the same sequence every time. They are the backbone of any interactive
+            feature  -  validating form input, filtering a list, processing quiz
+            answers, or retrying a network request.
+          </p>
+<pre><code>// ===== CONDITIONALS =====
+
+const score = 82;
+
+// if / else if / else  -  the most common branching pattern
+if (score &gt;= 90) {
+  console.log("Grade: A");
+} else if (score &gt;= 80) {
+  console.log("Grade: B");   // ← this runs
+} else if (score &gt;= 70) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F");
+}
+
+// Ternary operator  -  concise for simple conditions
+const status = score &gt;= 60 ? "Pass" : "Fail";
+console.log(status);  // "Pass"
+
+// switch  -  cleaner when comparing one value against many options
+const day = "Monday";
+switch (day) {
+  case "Monday":
+  case "Tuesday":
+  case "Wednesday":
+  case "Thursday":
+  case "Friday":
+    console.log("Weekday");
+    break;
+  case "Saturday":
+  case "Sunday":
+    console.log("Weekend");
+    break;
+  default:
+    console.log("Invalid day");
+}
+
+// ===== LOOPS =====
+
+// for loop  -  when you know the number of iterations
+for (let i = 0; i &lt; 5; i++) {
+  console.log("Iteration", i);   // 0, 1, 2, 3, 4
+}
+
+// for...of  -  iterate over array values (ES6+, preferred)
+const colours = ["red", "green", "blue"];
+for (const colour of colours) {
+  console.log(colour);
+}
+
+// while  -  when the number of iterations is unknown
+let attempts = 0;
+while (attempts &lt; 3) {
+  console.log("Attempt", attempts + 1);
+  attempts++;
+}
+
+// .forEach()  -  array method (functional style, no break/continue)
+colours.forEach((colour, index) =&gt; {
+  console.log(`${index + 1}. ${colour}`);
+});</code></pre>
+
+          <!-- Demo: Grade Calculator -->
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: Grade Calculator (Conditionals in Action)
+            </div>
+            <p class="body-small demo-desc">
+              Enter a numeric score and click <strong>Calculate</strong>. The JavaScript behind this uses an <code>if / else if / else</code> chain  -  the exact same pattern from the code snippet above  -  to determine the letter grade in real time.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; margin-bottom:12px;">
+              <div class="flex-control flex-control--sm">
+                <label class="label-large">Score (0–100)</label>
+                <input type="number" id="gradeInput" min="0" max="100" value="82" class="demo-input demo-input--code demo-input--lg">
+              </div>
+              <button class="btn btn--filled" id="gradeCalcBtn">
+                <span class="material-symbols-outlined">calculate</span> Calculate
+              </button>
+            </div>
+            <div id="gradeResultDisplay" style="text-align:center; padding:16px; border-radius:var(--md-sys-shape-corner-md); font-size:1rem; min-height:56px; display:flex; align-items:center; justify-content:center; transition:background 0.3s ease;"></div>
+            <pre class="demo-code-block"><code id="gradeCodeTrace"></code></pre>
+          </div>
+        </article>
+
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">category</span></div>
+            <div>
+              <h2 class="title-large">Objects, Data Types &amp; Template Literals</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            JavaScript has <strong>primitive</strong> types (<code>string</code>,
+            <code>number</code>, <code>boolean</code>, <code>null</code>,
+            <code>undefined</code>, <code>symbol</code>, <code>bigint</code>)
+            and one structural type: <strong>objects</strong>. Arrays, functions,
+            dates, and regular expressions are all objects under the hood.
+            Understanding data types prevents bugs like accidentally concatenating
+            numbers as strings or comparing values with the wrong operator.
+          </p>
+          <p class="body-large">
+            <strong>Template literals</strong> (backtick strings) let you embed
+            expressions directly inside strings using <code>${...}</code> syntax.
+            They also support multi-line strings without escape characters  -  a
+            significant improvement over traditional string concatenation.
+          </p>
+<pre><code>// ===== DATA TYPES =====
+const name   = "Alice";          // string
+const age    = 28;               // number
+const active = true;             // boolean
+const score  = null;             // null (intentionally empty)
+let   role;                      // undefined (not yet assigned)
+
+// typeof checks the type at runtime
+console.log(typeof name);    // "string"
+console.log(typeof age);     // "number"
+console.log(typeof active);  // "boolean"
+
+// ⚠ Comparison: always use === (strict) instead of == (loose)
+console.log(0 == "0");    // true  ← type coercion, dangerous!
+console.log(0 === "0");   // false ← strict, no coercion, safe
+
+// ===== OBJECTS =====
+// Objects store key-value pairs (properties and methods)
+const user = {
+  firstName: "Alice",
+  lastName: "Chen",
+  age: 28,
+  skills: ["HTML", "CSS", "JavaScript"],
+
+  // Method: a function that belongs to the object
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+};
+
+// Accessing properties
+console.log(user.firstName);          // "Alice"
+console.log(user["lastName"]);        // "Chen" (bracket notation)
+console.log(user.getFullName());      // "Alice Chen"
+
+// Destructuring: extract properties into variables
+const { firstName, skills } = user;
+console.log(firstName);   // "Alice"
+console.log(skills[0]);   // "HTML"
+
+// Spread operator: copy and extend objects
+const updatedUser = { ...user, age: 29, role: "Developer" };
+
+// ===== TEMPLATE LITERALS =====
+// Use backticks (`) instead of quotes for embedded expressions
+const greeting = `Hello, ${user.getFullName()}!
+You have ${user.skills.length} skills listed.
+Your profile is ${user.active !== false ? "active" : "inactive"}.`;
+
+console.log(greeting);
+// "Hello, Alice Chen!
+//  You have 3 skills listed.
+//  Your profile is active."</code></pre>
+
+          <!-- Demo: Object Inspector -->
+          
+        </article>
+
+        <!-- Card – String Methods -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">text_snippet</span></div>
+            <div>
+              <h2 class="title-large">String Methods</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Strings are one of the most commonly used data types. JavaScript
+            provides dozens of built-in methods to search, extract, transform,
+            and split strings. Since strings are <strong>immutable</strong>
+            (they cannot be changed in place), every method returns a
+            <em>new</em> string rather than modifying the original.
+          </p>
+<pre><code>const msg = "  Hello, World!  ";
+
+// Length (property, not a method)
+msg.length;                    // 19
+
+// Trimming whitespace
+msg.trim();                    // "Hello, World!"
+
+// Case conversion
+msg.trim().toUpperCase();      // "HELLO, WORLD!"
+msg.trim().toLowerCase();      // "hello, world!"
+
+// Searching
+msg.includes("World");         // true
+msg.indexOf("World");          // 9  (position, or -1 if not found)
+msg.startsWith("  Hello");     // true
+
+// Extracting substrings
+msg.trim().slice(0, 5);        // "Hello"
+msg.trim().slice(7);           // "World!"
+
+// Replacing
+msg.trim().replace("World", "JavaScript");  // "Hello, JavaScript!"
+msg.trim().replaceAll("l", "L");            // "HeLLo, WorLd!"
+
+// Splitting into an array
+"HTML,CSS,JS".split(",");      // ["HTML", "CSS", "JS"]
+"Hello World".split(" ");      // ["Hello", "World"]
+
+// Joining an array back into a string
+["HTML", "CSS", "JS"].join(" &amp; ");  // "HTML &amp; CSS &amp; JS"
+
+// Padding
+"5".padStart(3, "0");          // "005"
+
+// Template literal with expressions
+const name = "Alice";
+`Hello, ${name.toUpperCase()}!`;  // "Hello, ALICE!"</code></pre>
+
+          <!-- Demo: String Method Tester -->
+          
+        </article>
+
+        <!-- DOM Manipulation -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">account_tree</span></div>
+            <div>
+              <h2 class="title-large">DOM Manipulation</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            The <strong>Document Object Model (DOM)</strong> is the browser's
+            in-memory representation of the HTML page. JavaScript can select
+            elements, change their content and styles, create new elements, and
+            remove existing ones  -  all without reloading the page.
+          </p>
+          <p class="body-large">
+            <strong>Best practice:</strong> minimise direct DOM manipulation.
+            Each time you change the DOM, the browser may need to recalculate
+            layout (called a "reflow"). Batch your changes or use
+            <code>DocumentFragment</code> to avoid performance issues on complex pages.
+          </p>
+<pre><code>// ===== SELECTING ELEMENTS =====
+const title   = document.getElementById("main-title");
+const cards   = document.querySelectorAll(".card");   // NodeList
+const firstP  = document.querySelector("p");          // first match
+
+// ===== MODIFYING CONTENT &amp; STYLES =====
+title.textContent = "Updated Title";
+title.style.color = "#00695c";
+
+// classList is safer than overwriting className directly
+title.classList.add("highlight");
+title.classList.toggle("hidden");
+
+// ===== CREATING &amp; APPENDING ELEMENTS =====
+// Using DocumentFragment to batch-insert (avoids multiple reflows)
+const fragment = document.createDocumentFragment();
+const fruits = ["Apple", "Banana", "Cherry"];
+
+fruits.forEach(fruit =&gt; {
+  const li = document.createElement("li");
+  li.textContent = fruit;
+  li.classList.add("fruit-item");
+  fragment.appendChild(li);
+});
+
+// Only ONE reflow when the fragment is appended
+document.getElementById("fruit-list").appendChild(fragment);
+
+// ===== EVENT LISTENERS =====
+document.querySelector("#submitBtn")
+  .addEventListener("click", function(event) {
+    event.preventDefault();  // stop form from refreshing the page
+    const input = document.querySelector("#nameInput");
+    alert("Hello, " + input.value + "!");
+  });</code></pre>
+
+          <!-- Demo: DOM Manipulation Playground -->
+          
+        
+          <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: DOM Manipulation Playground
+            </div>
+            <p class="body-small demo-desc">Use the buttons to add, style, rename, and remove elements in real time.</p>
+            <div class="demo-btn-row" style="margin-bottom:12px;">
+              <button class="btn btn--filled" id="domAddBtn"><span class="material-symbols-outlined icon-sm">add</span> Add Element</button>
+              <button class="btn btn--outlined" id="domStyleBtn"><span class="material-symbols-outlined icon-sm">palette</span> Style Last</button>
+              <button class="btn btn--outlined" id="domTextBtn"><span class="material-symbols-outlined icon-sm">edit</span> Change Text</button>
+              <button class="btn btn--outlined" id="domRemoveBtn"><span class="material-symbols-outlined icon-sm">delete</span> Remove Last</button>
+              <button class="btn btn--text" id="domResetBtn"><span class="material-symbols-outlined icon-sm">refresh</span> Reset</button>
+            </div>
+            <div id="domPlayground" style="min-height:60px; padding:12px; border:2px dashed var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-md); display:flex; flex-wrap:wrap; gap:8px; align-items:flex-start;"></div>
+            <pre style="margin-top:8px;"><code id="domDemoLog" style="display:block; white-space:pre; color:var(--md-sys-color-on-surface-variant);"></code></pre>
+          </div>
+
+        </article>
+
+        <!-- jQuery -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">auto_awesome</span></div>
+            <div>
+              <h2 class="title-large">jQuery  -  Simplified DOM &amp; AJAX</h2>
+              <span class="chip chip--js">jQuery</span>
+            </div>
+          </div>
+          <p class="body-large">
+            jQuery is a lightweight library that simplifies DOM manipulation,
+            event handling, and AJAX calls. While modern vanilla JS has caught
+            up in many areas, jQuery remains valuable for projects that need
+            broad browser compatibility and concise syntax. Its
+            <code>$.ajax()</code> method is particularly useful for loading
+            content dynamically  -  a technique used on the Quiz page of this
+            application.
+          </p>
+<pre><code>// Wait for the DOM to be fully ready before running code
+$(document).ready(function() {
+
+  // ===== SELECTING &amp; MODIFYING =====
+  // jQuery wraps elements in a powerful object with chaining
+  $("h1")
+    .css("color", "#00695c")
+    .addClass("animated")
+    .attr("data-loaded", "true");
+
+  // ===== EVENT HANDLING =====
+  // .on() attaches events; supports delegation for dynamic content
+  $("#quiz-container").on("click", ".answer-btn", function() {
+    // 'this' refers to the clicked .answer-btn, even if it was
+    // added to the DOM after page load (event delegation).
+    $(this).addClass("selected");
+    $(".answer-btn").not(this).removeClass("selected");
+  });
+
+  // ===== AJAX: Load quiz data from a JSON file =====
+  $.ajax({
+    url: "data/questions.json",
+    method: "GET",
+    dataType: "json",
+    success: function(data) {
+      // data is already parsed as a JS object
+      console.log("Loaded " + data.length + " questions");
+      renderQuiz(data);
+    },
+    error: function(xhr, status, err) {
+      console.error("Failed to load quiz:", status, err);
+      $("#quiz-container").html(
+        "&lt;p class='error'&gt;Could not load questions. Please try again.&lt;/p&gt;"
+      );
+    }
+  });
+
+  // ===== ANIMATION =====
+  $(".card").hide().fadeIn(600);
+
+});</code></pre>
+
+          <!-- Demo: jQuery Live Chaining -->
+          
+        </article>
+
+        <!-- Error Handling -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">bug_report</span></div>
+            <div>
+              <h2 class="title-large">Error Handling  -  try / catch / finally</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Errors are inevitable in real applications  -  users enter invalid data,
+            network requests fail, and APIs return unexpected responses. The
+            <code>try...catch</code> statement lets you <strong>gracefully handle</strong>
+            errors instead of crashing the entire page. The optional <code>finally</code>
+            block runs regardless of success or failure, making it ideal for cleanup
+            tasks like hiding loading spinners.
+          </p>
+<pre><code>// ===== BASIC TRY / CATCH =====
+
+try {
+  // Code that might throw an error
+  const data = JSON.parse('{ invalid json }');
+} catch (error) {
+  // Runs only if an error occurred in the try block
+  console.error("Parsing failed:", error.message);
+  // "Parsing failed: Expected property name or '}' ..."
+} finally {
+  // Always runs  -  whether the try succeeded or failed
+  console.log("Cleanup: hiding loading spinner");
+}
+
+// ===== THROWING CUSTOM ERRORS =====
+
+function divide(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new TypeError("Both arguments must be numbers");
+  }
+  if (b === 0) {
+    throw new RangeError("Cannot divide by zero");
+  }
+  return a / b;
+}
+
+try {
+  const result = divide(10, 0);
+} catch (err) {
+  if (err instanceof RangeError) {
+    console.warn("Division error:", err.message);
+  } else {
+    console.error("Unexpected error:", err);
+  }
+}
+
+// ===== VALIDATING USER INPUT =====
+
+function validateEmail(email) {
+  if (!email || !email.includes("@")) {
+    throw new Error("Please enter a valid email address");
+  }
+  return true;
+}
+
+try {
+  validateEmail("not-an-email");
+} catch (err) {
+  // Display the error to the user in the UI
+  document.getElementById("error-msg").textContent = err.message;
+}</code></pre>
+
+          <!-- Demo: Try/Catch Simulator -->
+          
+        </article>
+
+        <!-- JSON -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">data_object</span></div>
+            <div>
+              <h2 class="title-large">JSON  -  Data Exchange Format</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            <strong>JSON</strong> (JavaScript Object Notation) is the standard
+            format for sending data between a server and a web browser. It looks
+            almost identical to JavaScript object syntax, but with two key
+            differences: all keys <strong>must</strong> be double-quoted strings,
+            and values can only be strings, numbers, booleans, null, arrays, or
+            nested objects (no functions, undefined, or comments).
+            <code>JSON.parse()</code> converts a JSON string into a JavaScript
+            object, and <code>JSON.stringify()</code> does the reverse.
+          </p>
+<pre><code>// ===== JSON format (what you receive from an API) =====
+// Keys MUST be double-quoted. No trailing commas.
+const jsonString = `{
+  "name": "Alice",
+  "age": 28,
+  "active": true,
+  "skills": ["HTML", "CSS", "JavaScript"],
+  "address": {
+    "city": "Perth",
+    "country": "Australia"
+  }
+}`;
+
+// ===== JSON.parse()  -  String → Object =====
+const user = JSON.parse(jsonString);
+console.log(user.name);        // "Alice"
+console.log(user.skills[0]);   // "HTML"
+console.log(user.address.city);// "Perth"
+
+// ===== JSON.stringify()  -  Object → String =====
+const obj = { name: "Bob", score: 95 };
+const str = JSON.stringify(obj);
+console.log(str);  // '{"name":"Bob","score":95}'
+
+// Pretty-print with indentation (useful for debugging)
+console.log(JSON.stringify(obj, null, 2));
+
+// ===== Common use: localStorage =====
+// localStorage only stores strings  -  use JSON to save objects
+localStorage.setItem("user", JSON.stringify(user));
+const loaded = JSON.parse(localStorage.getItem("user"));</code></pre>
+
+          <!-- Demo: JSON Parser -->
+          
+        </article>
+
+        <!-- Async JavaScript -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">sync</span></div>
+            <div>
+              <h2 class="title-large">Async JavaScript  -  Promises, fetch &amp; async/await</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            JavaScript is <strong>single-threaded</strong>  -  it can only execute
+            one thing at a time. To avoid freezing the UI while waiting for slow
+            operations (network requests, file reads, timers), JS uses
+            <strong>asynchronous</strong> patterns. A <strong>Promise</strong>
+            represents a value that will be available in the future. The modern
+            <code>async/await</code> syntax makes asynchronous code read like
+            synchronous code, which is much easier to understand and debug.
+          </p>
+          <p class="body-large">
+            The <code>fetch()</code> API is the modern replacement for
+            <code>XMLHttpRequest</code> (and jQuery's <code>$.ajax</code>).
+            It returns a Promise and supports a clean, chainable syntax.
+          </p>
+<pre><code>// ===== PROMISES =====
+// A Promise is either: pending, fulfilled, or rejected.
+
+const myPromise = new Promise((resolve, reject) =&gt; {
+  const success = true;
+  setTimeout(() =&gt; {
+    if (success) {
+      resolve("Data loaded!");   // fulfilled
+    } else {
+      reject("Network error");   // rejected
+    }
+  }, 1000);
+});
+
+// Consuming a promise with .then() and .catch()
+myPromise
+  .then(data =&gt; console.log(data))     // "Data loaded!"
+  .catch(err =&gt; console.error(err))
+  .finally(() =&gt; console.log("Done")); // Always runs
+
+// ===== FETCH API =====
+// fetch() returns a Promise  -  the modern way to make HTTP requests.
+
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(response =&gt; {
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    return response.json();  // Parse the JSON body (also a Promise)
+  })
+  .then(post =&gt; {
+    console.log("Title:", post.title);
+  })
+  .catch(error =&gt; {
+    console.error("Fetch failed:", error.message);
+  });
+
+// ===== ASYNC / AWAIT =====
+// Syntactic sugar over Promises  -  reads top-to-bottom like sync code.
+
+async function loadUser(userId) {
+  try {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users/${userId}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`User not found (HTTP ${response.status})`);
+    }
+
+    const user = await response.json();
+    console.log(`Loaded: ${user.name} (${user.email})`);
+    return user;
+
+  } catch (error) {
+    console.error("Failed to load user:", error.message);
+    return null;
+  }
+}
+
+// Call the async function
+loadUser(1);  // Logs: "Loaded: Leanne Graham (Sincere@april.biz)"</code></pre>
+
+          <!-- Demo: Promise Timeline Visualiser -->
+          
+        </article>
+
+        <!-- Interactive JS Editor -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">edit_note</span></div>
+            <div>
+              <h2 class="title-large">Try It Yourself  -  JavaScript Sandbox</h2>
+              <span class="chip chip--js">Interactive</span>
+            </div>
+          </div>
+          <p class="body-medium">
+            Write JavaScript below and click <strong>Run</strong> to execute it.
+            Use <code>output()</code> instead of <code>console.log()</code> to
+            display results in the output panel. Try using <code>.filter()</code>,
+            <code>.map()</code>, or <code>.reduce()</code> on arrays!
+          </p>
+          
+        <div class="demo-area">
+            <div class="demo-area__label">
+              <span class="material-symbols-outlined icon-sm">science</span>
+              Interactive: JavaScript Sandbox
+            </div>
+            <p class="body-small demo-desc">Write JavaScript and click Run. Use <code>output()</code> instead of <code>console.log()</code> to see results.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <div style="flex:1; min-width:260px;">
+                <textarea id="jsEditor" rows="8" spellcheck="false" style="width:100%; font-family:var(--md-sys-typescale-code-font); font-size:0.8125rem; padding:12px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); background:var(--md-sys-color-surface-container-highest); color:var(--md-sys-color-on-surface); resize:vertical;">const greeting = &quot;Hello, world!&quot;;
+output(greeting);
+output(&quot;Length: &quot; + greeting.length);
+output(&quot;Uppercase: &quot; + greeting.toUpperCase());</textarea>
+                <div style="margin-top:8px; display:flex; gap:8px;">
+                  <button class="btn btn--filled" id="runJsBtn"><span class="material-symbols-outlined icon-sm">play_arrow</span> Run</button>
+                  <button class="btn btn--text" id="resetJsBtn"><span class="material-symbols-outlined icon-sm">refresh</span> Reset</button>
+                </div>
+              </div>
+              <div style="flex:1; min-width:260px;">
+                <div id="jsPreview" style="width:100%; min-height:180px; padding:12px; border:1px solid var(--md-sys-color-outline-variant); border-radius:var(--md-sys-shape-corner-sm); background:var(--md-sys-color-surface-container-highest); font-family:var(--md-sys-typescale-code-font); font-size:0.8125rem; color:var(--md-sys-color-on-surface); overflow-y:auto; white-space:pre-wrap;"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Debugging & DevTools -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">bug_report</span></div>
+            <div>
+              <h2 class="title-large">Debugging with Browser DevTools</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            Every modern browser includes <strong>Developer Tools</strong> (DevTools)
+            that let you inspect HTML, debug JavaScript, monitor network requests,
+            and profile performance. Knowing how to use DevTools is one of the most
+            important practical skills a web developer can have - it turns hours of
+            guessing into minutes of targeted diagnosis.
+          </p>
+          <p class="body-large">
+            <strong>The Console</strong> is your primary debugging tool.
+            <code>console.log()</code> prints values for inspection,
+            <code>console.error()</code> highlights problems, and
+            <code>console.table()</code> formats arrays and objects as tables.
+            The <strong>Elements</strong> panel lets you inspect and live-edit
+            HTML and CSS. The <strong>Sources</strong> panel lets you set
+            breakpoints and step through JavaScript line by line.
+          </p>
+<pre><code>// ===== CONSOLE METHODS =====
+
+console.log("Simple message");
+console.log("User:", user);           // Inspect objects
+
+console.error("Something went wrong"); // Red error styling
+console.warn("Check this value");      // Yellow warning
+
+// Table format for arrays/objects
+console.table([
+  { name: "Alice", score: 95 },
+  { name: "Bob", score: 82 }
+]);
+
+// Group related logs together
+console.group("Quiz Results");
+console.log("Score: 12/15");
+console.log("Percentage: 80%");
+console.groupEnd();
+
+// Measure execution time
+console.time("AJAX load");
+// ... some operation ...
+console.timeEnd("AJAX load"); // "AJAX load: 245ms"
+
+// ===== BREAKPOINTS =====
+// In the Sources panel:
+// 1. Click a line number to set a breakpoint
+// 2. Reload or trigger the code path
+// 3. Execution pauses at that line
+// 4. Hover variables to see their current values
+// 5. Use Step Over (F10), Step Into (F11), Continue (F8)
+
+// Or use the debugger statement in code:
+function calculateGrade(score) {
+  debugger; // Execution pauses here when DevTools is open
+  if (score >= 90) return "A";
+  if (score >= 80) return "B";
+  return "F";
+}</code></pre>
+          <ul class="concept-list">
+            <li><strong>Open DevTools:</strong> Press <code>F12</code> or <code>Ctrl+Shift+I</code> (Windows/Linux) / <code>Cmd+Option+I</code> (Mac).</li>
+            <li><strong>Console tab:</strong> Run JavaScript live, inspect variables, and see errors.</li>
+            <li><strong>Elements tab:</strong> Inspect any element, live-edit CSS, and see computed styles.</li>
+            <li><strong>Network tab:</strong> Monitor AJAX requests, check response status codes, and measure load times.</li>
+            <li><strong>Application tab:</strong> Inspect localStorage, cookies, and sessionStorage.</li>
+          </ul>
+        </article>
+
+        
+
+        <!-- Event-Driven Programming -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">touch_app</span></div>
+            <div>
+              <h2 class="title-large">Event-Driven Programming</h2>
+              <span class="chip chip--js">JavaScript</span>
+            </div>
+          </div>
+          <p class="body-large">
+            JavaScript is fundamentally <strong>event-driven</strong>: instead of
+            executing code from top to bottom in a fixed sequence, you register
+            <em>listeners</em> that wait for specific events to occur - a click,
+            a keystroke, a form submission, a page load, or data arriving from a
+            server. When the event fires, the browser calls your listener function.
+            This model is what makes web pages interactive.
+          </p>
+          <p class="body-large">
+            The <strong>event loop</strong> is the mechanism behind this. JavaScript
+            runs a single thread that continuously checks a queue of pending events.
+            When your code finishes executing, the engine picks up the next event
+            in the queue and runs its handler. This is why long-running synchronous
+            code (like a heavy loop) freezes the UI - it blocks the event loop from
+            processing other events like clicks or scrolls.
+          </p>
+<pre><code>// ===== EVENT LISTENERS =====
+// Register a function that runs when a specific event occurs.
+// The browser calls it automatically - you don't call it yourself.
+
+const btn = document.querySelector("#submitBtn");
+
+// addEventListener(eventType, handlerFunction)
+btn.addEventListener("click", function(event) {
+  event.preventDefault();   // Stop the default browser action
+  console.log("Button clicked!");
+  console.log("Target element:", event.target);
+});
+
+// ===== COMMON EVENT TYPES =====
+// Mouse:    click, dblclick, mouseenter, mouseleave
+// Keyboard: keydown, keyup, keypress
+// Form:     submit, change, input, focus, blur
+// Window:   load, resize, scroll, beforeunload
+// Touch:    touchstart, touchend, touchmove
+
+// ===== EVENT DELEGATION =====
+// Instead of attaching a listener to every child element,
+// attach ONE listener to the parent. The event "bubbles up"
+// from the clicked child to the parent. This is more efficient
+// and works with dynamically added elements.
+
+document.querySelector("#quiz-container")
+  .addEventListener("click", function(event) {
+    // event.target is the actual element that was clicked
+    if (event.target.classList.contains("answer-btn")) {
+      event.target.classList.add("selected");
+    }
+  });
+
+// ===== jQuery EQUIVALENT =====
+// .on() supports delegation via a second selector argument:
+$("#quiz-container").on("click", ".answer-btn", function() {
+  $(this).addClass("selected");
+  // 'this' is the .answer-btn that was clicked,
+  // even if it was added to the DOM after page load.
+});
+
+// ===== THE EVENT OBJECT =====
+// Every handler receives an Event object with useful properties:
+document.addEventListener("keydown", function(e) {
+  console.log("Key pressed:", e.key);     // "Enter", "a", "Escape"
+  console.log("Ctrl held?", e.ctrlKey);   // true/false
+  console.log("Target:", e.target);       // the focused element
+  
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});</code></pre>
+          <ul class="concept-list">
+            <li><strong>Event bubbling:</strong> Events propagate from the target element up through its ancestors. This is why event delegation works - a click on a child <code>&lt;button&gt;</code> also triggers click handlers on its parent <code>&lt;div&gt;</code>, <code>&lt;body&gt;</code>, etc.</li>
+            <li><strong>event.preventDefault():</strong> Stops the browser's default action (e.g., prevents a form from reloading the page on submit, or a link from navigating).</li>
+            <li><strong>event.stopPropagation():</strong> Stops the event from bubbling further up the DOM tree. Use sparingly - it can break other listeners that depend on bubbling.</li>
+            <li><strong>Prefer .addEventListener() over onclick:</strong> <code>addEventListener</code> allows multiple listeners on the same element and keeps JS separate from HTML. Inline <code>onclick</code> attributes mix concerns and only allow one handler.</li>
+            <li><strong>Event delegation for performance:</strong> Instead of 100 listeners on 100 list items, attach one listener to the <code>&lt;ul&gt;</code> parent and check <code>event.target</code>. This uses less memory and automatically works with dynamically added items.</li>
+          </ul>
+        </article>
+
+        <!-- JS Cheatsheet -->
+        <article class="card card--elevated fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">bolt</span></div>
+            <div>
+              <h2 class="title-large">JavaScript Cheatsheet</h2>
+              <span class="chip chip--js">Quick Reference</span>
+            </div>
+          </div>
+
+          <h3 class="title-medium section-subtitle section-subtitle--first">Variables &amp; Types</h3>
+<pre><code>const name = "Alice";    // Cannot reassign (preferred default)
+let   count = 0;         // Can reassign
+// var  -  avoid (function-scoped, leaks out of blocks)
+
+// Primitives: string, number, boolean, null, undefined, symbol, bigint
+typeof "hello"  // "string"
+typeof 42       // "number"
+typeof true     // "boolean"
+
+// Always use === (strict) instead of == (loose coercion)</code></pre>
+
+          <h3 class="title-medium section-subtitle">Functions</h3>
+<pre><code>// Declaration
+function add(a, b) { return a + b; }
+
+// Arrow function (ES6+)
+const add = (a, b) =&gt; a + b;
+
+// Default parameters
+const greet = (name = "World") =&gt; `Hello, ${name}!`;</code></pre>
+
+          <h3 class="title-medium section-subtitle">Control Flow</h3>
+<pre><code>// Conditionals
+if (x &gt; 10) { } else if (x &gt; 5) { } else { }
+const result = x &gt; 0 ? "positive" : "negative";  // ternary
+
+// Loops
+for (let i = 0; i &lt; 5; i++) { }
+for (const item of array) { }
+while (condition) { }
+array.forEach((item, index) =&gt; { });</code></pre>
+
+          <h3 class="title-medium section-subtitle">Arrays</h3>
+          <div class="overflow-x">
+            <table class="cheatsheet-table">
+              <tbody>
+                <tr><td><code>.push(x)</code> / <code>.pop()</code></td><td>Add to end / remove from end</td></tr>
+                <tr><td><code>.filter(fn)</code></td><td>New array with items passing test</td></tr>
+                <tr><td><code>.map(fn)</code></td><td>New array with transformed items</td></tr>
+                <tr><td><code>.reduce(fn, init)</code></td><td>Accumulate into single value</td></tr>
+                <tr><td><code>.find(fn)</code> / <code>.findIndex(fn)</code></td><td>First match / its index</td></tr>
+                <tr><td><code>.includes(x)</code></td><td>Check if array contains value</td></tr>
+                <tr><td><code>.sort(fn)</code></td><td>Sort in place (mutates!)</td></tr>
+                <tr><td><code>.slice(a, b)</code></td><td>Copy portion (non-destructive)</td></tr>
+                <tr><td><code>.join(sep)</code></td><td>Array → string</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="title-medium section-subtitle">Strings</h3>
+          <div class="overflow-x">
+            <table class="cheatsheet-table">
+              <tbody>
+                <tr><td><code>.length</code></td><td>Character count (property)</td></tr>
+                <tr><td><code>.trim()</code></td><td>Remove leading/trailing whitespace</td></tr>
+                <tr><td><code>.toUpperCase()</code> / <code>.toLowerCase()</code></td><td>Case conversion</td></tr>
+                <tr><td><code>.includes(s)</code> / <code>.indexOf(s)</code></td><td>Search (boolean / position)</td></tr>
+                <tr><td><code>.slice(a, b)</code></td><td>Extract substring</td></tr>
+                <tr><td><code>.replace(a, b)</code></td><td>Replace first match</td></tr>
+                <tr><td><code>.split(sep)</code></td><td>String → array</td></tr>
+                <tr><td><code>`${expr}`</code></td><td>Template literal (backticks)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="title-medium section-subtitle">Objects &amp; JSON</h3>
+<pre><code>const user = { name: "Alice", age: 28 };
+user.name;                      // Dot notation
+user["name"];                   // Bracket notation
+const { name, age } = user;    // Destructuring
+const copy = { ...user, role: "Dev" };  // Spread
+
+JSON.parse(jsonString);         // String → Object
+JSON.stringify(obj);            // Object → String</code></pre>
+
+          <h3 class="title-medium section-subtitle">DOM &amp; Events</h3>
+<pre><code>document.getElementById("id");
+document.querySelector(".class");
+document.querySelectorAll("p");
+
+el.textContent = "new text";
+el.classList.add("active");
+el.style.color = "red";
+el.remove();
+
+// Events
+el.addEventListener("click", (e) =&gt; {
+  e.preventDefault();      // Stop default action
+  e.stopPropagation();     // Stop bubbling
+});
+
+// Event delegation (one listener on parent)
+parent.addEventListener("click", (e) =&gt; {
+  if (e.target.matches(".child")) { /* handle */ }
+});
+
+// jQuery equivalents
+$("selector").on("click", function() { });
+$("parent").on("click", ".child", function() { }); // delegation</code></pre>
+
+          <h3 class="title-medium section-subtitle">Debugging</h3>
+<pre><code>console.log("value:", x);       // Inspect values
+console.error("failed!");       // Red error
+console.table(array);           // Table format
+console.time("label");          // Start timer
+console.timeEnd("label");       // End timer
+debugger;                       // Breakpoint in code
+
+// DevTools: F12 or Ctrl+Shift+I
+// Console &gt; Elements &gt; Sources &gt; Network &gt; Application</code></pre>
+
+          <h3 class="title-medium section-subtitle">Async &amp; Error Handling</h3>
+<pre><code>// try/catch
+try { riskyOperation(); }
+catch (err) { console.error(err.message); }
+finally { cleanup(); }
+
+// fetch + async/await
+async function loadData() {
+  const res = await fetch("url");
+  const data = await res.json();
+  return data;
+}
+
+// jQuery AJAX
+$.ajax({ url: "data.json", method: "GET",
+  success: function(data) { },
+  error: function(err) { }
+});</code></pre>
+        </article>
+
+        <!-- Key Takeaways -->
+        <article class="card card--filled fade-in">
+          <div class="card__header">
+            <div class="card__icon"><span class="material-symbols-outlined">lightbulb</span></div>
+            <div>
+              <h2 class="title-large">Key Takeaways</h2>
+            </div>
+          </div>
+          <ul class="concept-list">
+            <li>Always use <code>const</code> by default; switch to <code>let</code> only when reassignment is necessary. Never use <code>var</code>.</li>
+            <li>Always use <code>===</code> (strict equality) instead of <code>==</code> to avoid type coercion bugs.</li>
+            <li>Prefer <code>for...of</code> for iterating arrays and <code>.forEach()</code>/<code>.map()</code>/<code>.filter()</code> for functional transformations.</li>
+            <li>Use <code>.addEventListener()</code> (or jQuery's <code>.on()</code>) instead of inline <code>onclick</code> attributes  -  it keeps HTML and JS separated and supports multiple listeners.</li>
+            <li>Minimise DOM updates by batching changes with <code>DocumentFragment</code> or building HTML strings before inserting.</li>
+            <li>Always wrap risky operations (JSON parsing, network calls, user input) in <code>try/catch</code> to prevent unhandled crashes.</li>
+            <li>Use <code>async/await</code> with <code>fetch()</code> for clean, readable asynchronous code  -  it is the modern replacement for callback-based patterns and <code>$.ajax()</code>.</li>
+            <li>Prefer <strong>event delegation</strong> (attach one listener to a parent) over attaching listeners to each child  -  it is more memory-efficient and works with dynamically added elements.</li>
+            <li>Use <strong>DevTools</strong> (<code>F12</code>) to debug: <code>console.log()</code> for inspecting values, the Sources panel for breakpoints, and the Network tab for monitoring AJAX requests.</li>
+          </ul>
+        
+          
+
+        </article>
+      </section>
+
+      <!-- CTA to quiz -->
+      <div class="cta-banner fade-in" id="ctaBanner">
+        <h2 class="headline-medium">Ready to Test Your Knowledge?</h2>
+        <p class="body-large">
+          You've covered HTML structure, CSS styling, and JavaScript interactivity.
+          Head to the quiz and put what you've learned to the test!
+        </p>
+        <a href="quiz.html" class="btn" id="quizCta">
+          <span class="material-symbols-outlined">arrow_forward</span>
+          Take the Quiz
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Dip's Web Academy &copy; 2026</p>
+    <p style="font-size:0.6875rem; margin-top:6px; opacity:0.7;">Tested on Chrome, Firefox, Edge &amp; Safari · Validated with W3C HTML &amp; CSS validators</p>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top" title="Back to top">
+    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+  </button>
+
+  <!-- Snackbar -->
+  <div class="snackbar" id="snackbar"></div>
+
+  <!-- Scripts -->
+  <script src="js/shared.js"></script>
+  <script src="js/landing.js"></script>
+  <script src="js/tutorial.js"></script>
+</body>
+</html>

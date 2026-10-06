@@ -86,6 +86,7 @@ dips-web-academy/
 - **Quiz demo mode** for instructor demonstrations (simulate pass/fail results)
 - **Quiz timer** (count-up, non-enforced, saved to history)
 - **Skeleton loading** placeholders with shimmer animation
+- **Matrix-inspired code rain** canvas animation behind the landing hero (theme-aware, pauses when scrolled away, off when the OS requests reduced motion)
 
 ## Technologies Used
 

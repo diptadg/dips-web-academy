@@ -4,7 +4,7 @@
 
 ## Overview
 
-A four-page interactive web application demonstrating HTML, CSS, and JavaScript fundamentals. Built with a unified Material Design 3 theme, responsive layout, and accessible design.
+A two-page interactive web application demonstrating HTML, CSS, and JavaScript fundamentals. Built with a unified Material Design 3 theme, responsive layout, and accessible design.
 
 ## Pages
 
@@ -12,8 +12,6 @@ A four-page interactive web application demonstrating HTML, CSS, and JavaScript 
 |------|------|-------------|
 | **Tutorial** | `index.html` | Interactive tutorial covering HTML, CSS, and JavaScript with 14 live demos, cheatsheets, and code examples |
 | **Quiz** | `quiz.html` | Dynamic quiz with AJAX-loaded questions, randomisation, scoring, public API reward, and localStorage history |
-| **AI Reflection** | `reflection.html` | Documented AI usage with prompts, outputs, changes, and critical evaluation of errors found |
-| **CV** | `cv.html` | Professional CV with biography, qualifications, skills, and live GitHub API integration |
 
 ## How to Run
 
@@ -50,26 +48,18 @@ php -S localhost:8000
 dips-web-academy/
 ├── index.html              # Landing page + Interactive tutorial
 ├── quiz.html               # Quiz page
-├── reflection.html         # AI Reflection Log page
-├── cv.html                 # Personalised CV page
 ├── favicon.svg             # Site favicon
 ├── css/
 │   ├── style.css           # Shared Material Design 3 stylesheet
 │   ├── landing.css         # Landing page hero, cards, animations
-│   ├── quiz.css            # Quiz page styles
-│   ├── reflection.css      # AI Reflection page styles
-│   └── cv.css              # CV page styles
+│   └── quiz.css            # Quiz page styles
 ├── js/
 │   ├── shared.js           # Shared: dark mode toggle, back-to-top, mobile nav
 │   ├── landing.js          # Landing: typing animation, scroll reveal, syntax highlighting
 │   ├── tutorial.js         # Tutorial: 14 interactive demo handlers
-│   ├── quiz.js             # Quiz: AJAX, scoring, timer, reward, localStorage
-│   ├── cv.js               # CV: animations, section nav, GitHub API repos
-│   └── reflection.js       # AI Reflection: scroll fade-ins
+│   └── quiz.js             # Quiz: AJAX, scoring, timer, reward, localStorage
 ├── data/
 │   └── questions.json      # Quiz questions (loaded via AJAX at runtime)
-├── images/
-│   └── profile.jpg         # CV profile photo
 └── README.md               # This file
 ```
 
@@ -80,7 +70,7 @@ dips-web-academy/
 - **AJAX** quiz loading from local JSON file with Fisher-Yates randomisation
 - **jQuery** for DOM manipulation, event handling, and AJAX calls
 - **localStorage** for quiz attempt history with try/catch for private browsing
-- **Public API integration** (DummyJSON Quotes API for quiz reward quotes, GitHub API for CV repos)
+- **Public API integration** (DummyJSON Quotes API for quiz reward quotes)
 - **Responsive design** with mobile navigation drawer (tested 320px–1440px)
 - **Accessibility**: skip-to-content link, ARIA attributes, semantic HTML, keyboard navigation
 - **Quiz demo mode** for instructor demonstrations (simulate pass/fail results)
@@ -99,7 +89,6 @@ dips-web-academy/
 | Google Fonts | Outfit (body) + Source Code Pro (code) |
 | Material Symbols | Icon font (loaded via CDN) |
 | DummyJSON Quotes API | Public API for motivational quote on quiz pass |
-| GitHub API | Public API for CV repository listing |
 
 ## Browser Compatibility
 
@@ -120,11 +109,7 @@ Tested and verified on:
 
 ## AI Usage
 
-AI tools (Claude, ChatGPT) were used as development assistants. Full documentation including specific prompts, output summaries, changes made, and critical evaluation of errors found is available on the **AI Reflection Log** page (`reflection.html`).
-
-## References
-
-All sources are cited in UWA Harvard referencing style on the CV page (`cv.html#referencesSection`), including AI tools, web technologies, libraries, APIs, and academic referencing guides.
+AI tools (Claude, ChatGPT) were used as development assistants.
 
 ## Author
 
